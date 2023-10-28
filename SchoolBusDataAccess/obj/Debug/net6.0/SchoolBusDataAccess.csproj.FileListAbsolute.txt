@@ -1,0 +1,17 @@
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\bin\Debug\net6.0\SchoolBusDataAccess.deps.json
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\bin\Debug\net6.0\SchoolBusDataAccess.runtimeconfig.json
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\bin\Debug\net6.0\SchoolBusDataAccess.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\bin\Debug\net6.0\SchoolBusDataAccess.pdb
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\bin\Debug\net6.0\SchoolBusModels.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\bin\Debug\net6.0\SchoolBusModels.pdb
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.csproj.AssemblyReference.cache
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.AssemblyInfoInputs.cache
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.AssemblyInfo.cs
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.csproj.CopyComplete
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\refint\SchoolBusDataAccess.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.pdb
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\SchoolBusDataAccess.genruntimeconfig.cache
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusDataAccess\obj\Debug\net6.0\ref\SchoolBusDataAccess.dll

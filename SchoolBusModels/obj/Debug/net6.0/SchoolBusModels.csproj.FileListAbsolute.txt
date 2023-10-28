@@ -1,0 +1,12 @@
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\bin\Debug\net6.0\SchoolBusModels.deps.json
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\bin\Debug\net6.0\SchoolBusModels.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\bin\Debug\net6.0\SchoolBusModels.pdb
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\SchoolBusModels.csproj.AssemblyReference.cache
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\SchoolBusModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\SchoolBusModels.AssemblyInfoInputs.cache
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\SchoolBusModels.AssemblyInfo.cs
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\SchoolBusModels.csproj.CoreCompileInputs.cache
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\SchoolBusModels.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\refint\SchoolBusModels.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\SchoolBusModels.pdb
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusModels\obj\Debug\net6.0\ref\SchoolBusModels.dll
