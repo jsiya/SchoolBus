@@ -21,6 +21,7 @@ public class SchoolBusDataContext : DbContext
         modelBuilder.ApplyConfiguration(new ClassConfiguration());
         modelBuilder.ApplyConfiguration(new DriverConfiguration());
         modelBuilder.ApplyConfiguration(new CarConfiguration());
+        modelBuilder.ApplyConfiguration(new AdminConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 

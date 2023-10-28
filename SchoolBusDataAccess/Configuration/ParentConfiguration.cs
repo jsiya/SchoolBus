@@ -8,6 +8,12 @@ public class ParentConfiguration : IEntityTypeConfiguration<Parent>
 {
     public void Configure(EntityTypeBuilder<Parent> builder)
     {
+        builder.Property(p => p.Username)
+            .HasColumnType("nvarchar(50)");
+        
+        builder.Property(p => p.Password)
+            .HasColumnType("nvarchar(30)");
+
         builder.Property(p => p.FirstName)
             .HasColumnType("nvarchar(50)");
 

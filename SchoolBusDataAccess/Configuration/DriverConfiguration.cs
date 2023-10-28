@@ -8,6 +8,12 @@ public class DriverConfiguration : IEntityTypeConfiguration<Driver>
 {
     public void Configure(EntityTypeBuilder<Driver> builder)
     {
+        builder.Property(d => d.Username)
+            .HasColumnType("nvarchar(50)");
+
+        builder.Property(d => d.Password)
+            .HasColumnType("nvarchar(30)");
+
         builder.Property(d => d.FirstName)
             .HasColumnType("nvarchar(50)");
 

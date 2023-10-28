@@ -56,3 +56,5 @@ C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-wi
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\SchoolBusProject.pdb
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\SchoolBusProject.genruntimeconfig.cache
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\ref\SchoolBusProject.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\bin\Debug\net6.0-windows\Humanizer.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
