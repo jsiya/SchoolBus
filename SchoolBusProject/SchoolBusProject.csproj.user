@@ -7,10 +7,31 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Pages\CarsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\ClassesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\DriversView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\HolidaysView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\MainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\NavRailView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\ParentsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\StudentsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Windows\CreateCarWindow.xaml.cs">
@@ -33,10 +54,31 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\Pages\CarsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\ClassesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\DriversView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\HolidaysView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\MainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\NavRailView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\ParentsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\StudentsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Windows\CreateCarWindow.xaml">

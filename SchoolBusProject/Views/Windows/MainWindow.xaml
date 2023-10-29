@@ -27,6 +27,11 @@
             </Grid.Background>
 
             <!--Header-->
+            <TextBlock Text="School Bus"
+                       Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                       FontSize="20"
+                       FontWeight="SemiBold"
+                       Margin="30 15 0 0"/>
             <StackPanel Grid.Row="0"
                         Orientation="Horizontal"
                         FlowDirection="RightToLeft"
@@ -45,17 +50,17 @@
                     <materialDesign:PackIcon  Kind="Minimize" />
                 </Button>
             </StackPanel>
-            
+
             <!--Main-->
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Background="Transparent">
                 <Frame 
                x:Name="MainFrame" 
                Grid.Row="1"
                NavigationUIVisibility="Hidden"
-               Margin="0 10 0 10"
+               Margin="-5 -5"
                />
             </Grid>
-                      
+
         </Grid>
     </Border>
 </Window>

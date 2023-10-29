@@ -10,7 +10,7 @@ class LoginViewModel : ViewModelBase, INotifyPropertyChanged
 {
     //Properties
     public Frame ViewFrame { get; set; }
-    public ICommand? LoginCommand { get; set; }
+    //public ICommand? LoginCommand { get; set; }
 
 
     private string? _username;

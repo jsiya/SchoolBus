@@ -15,6 +15,8 @@
   <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.3.0" />
+    <PackageReference Include="MaterialDesignThemes.Wpf" Version="1.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.23">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

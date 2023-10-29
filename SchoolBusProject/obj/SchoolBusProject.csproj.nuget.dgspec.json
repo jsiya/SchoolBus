@@ -204,6 +204,14 @@
               "target": "Package",
               "version": "[4.9.0, )"
             },
+            "MaterialDesignThemes.MahApps": {
+              "target": "Package",
+              "version": "[0.3.0, )"
+            },
+            "MaterialDesignThemes.Wpf": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

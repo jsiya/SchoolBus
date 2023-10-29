@@ -37,6 +37,18 @@
           }
         }
       },
+      "ControlzEx/4.3.0": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39",
+          "System.Text.Json": "4.7.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ControlzEx.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.3.0.108"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -92,6 +104,17 @@
           }
         }
       },
+      "MahApps.Metro/2.0.0": {
+        "dependencies": {
+          "ControlzEx": "4.3.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MahApps.Metro.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.894"
+          }
+        }
+      },
       "MaterialDesignColors/2.1.4": {
         "runtime": {
           "lib/net6.0/MaterialDesignColors.dll": {
@@ -109,6 +132,32 @@
           "lib/net6.0/MaterialDesignThemes.Wpf.dll": {
             "assemblyVersion": "4.9.0.0",
             "fileVersion": "4.9.0.0"
+          }
+        }
+      },
+      "MaterialDesignThemes.MahApps/0.3.0": {
+        "dependencies": {
+          "MahApps.Metro": "2.0.0",
+          "MaterialDesignColors": "2.1.4",
+          "MaterialDesignThemes": "4.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/MaterialDesignThemes.MahApps.dll": {
+            "assemblyVersion": "0.3.0.0",
+            "fileVersion": "0.3.0.0"
+          }
+        }
+      },
+      "MaterialDesignThemes.Wpf/1.0.1": {
+        "dependencies": {
+          "MaterialDesignColors": "2.1.4",
+          "Microsoft.CSharp": "4.6.0",
+          "System.Data.DataSetExtensions": "4.6.0-preview3.19128.7"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -184,7 +233,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {},
+      "Microsoft.CSharp/4.6.0": {},
       "Microsoft.Data.SqlClient/2.1.4": {
         "dependencies": {
           "Microsoft.Data.SqlClient.SNI.runtime": "2.1.1",
@@ -473,7 +522,7 @@
       },
       "Microsoft.IdentityModel.Tokens/6.8.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.6.0",
           "Microsoft.IdentityModel.Logging": "6.8.0",
           "System.Security.Cryptography.Cng": "4.5.0"
         },
@@ -487,7 +536,7 @@
       "Microsoft.NETCore.App/1.0.5": {
         "dependencies": {
           "Libuv": "1.9.1",
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.6.0",
           "Microsoft.CodeAnalysis.CSharp": "1.3.0",
           "Microsoft.CodeAnalysis.VisualBasic": "1.3.0",
           "Microsoft.NETCore.DotNetHostPolicy": "1.0.5",
@@ -1044,6 +1093,14 @@
           "System.IO": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0"
+        }
+      },
+      "System.Data.DataSetExtensions/4.6.0-preview3.19128.7": {
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.19.12807"
+          }
         }
       },
       "System.Diagnostics.Debug/4.3.0": {
@@ -2360,6 +2417,14 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
+      "System.Text.Json/4.7.2": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "assemblyVersion": "4.0.1.2",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      },
       "System.Text.RegularExpressions/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -2635,6 +2700,13 @@
       "path": "commonservicelocator/2.0.2",
       "hashPath": "commonservicelocator.2.0.2.nupkg.sha512"
     },
+    "ControlzEx/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I7PKmQNIMO9+s4s50WXOApotnyEKL9G8vvYrZY7CLe7nufXwRSv+vWPrd4BYwZDQiWHbBwnXsC8zUPgPnEWr6g==",
+      "path": "controlzex/4.3.0",
+      "hashPath": "controlzex.4.3.0.nupkg.sha512"
+    },
     "Humanizer.Core/2.8.26": {
       "type": "package",
       "serviceable": true,
@@ -2649,6 +2721,13 @@
       "path": "libuv/1.9.1",
       "hashPath": "libuv.1.9.1.nupkg.sha512"
     },
+    "MahApps.Metro/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-btjlE3Q8iebJB+4TBJZLcJBQZshKYqfkcATj9AS8veq4a506uE71NOTE1OSoavOJ70xasBjcdc+VuN17l+kIqw==",
+      "path": "mahapps.metro/2.0.0",
+      "hashPath": "mahapps.metro.2.0.0.nupkg.sha512"
+    },
     "MaterialDesignColors/2.1.4": {
       "type": "package",
       "serviceable": true,
@@ -2662,6 +2741,20 @@
       "sha512": "sha512-Bp9Auw70j+9V7WsUMT4pc8ulVzfL0Eav/tyGgICDirxxhKJwhqtC/6PRkTUm+R1t9611xiDuk5pSUNdDV6vfOQ==",
       "path": "materialdesignthemes/4.9.0",
       "hashPath": "materialdesignthemes.4.9.0.nupkg.sha512"
+    },
+    "MaterialDesignThemes.MahApps/0.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E40dJiXbP9rHiuvZOyZTIanK8BvIM2YM1lZi20m3XQP0HUoZBdjuTWZEdaAtcYWNsz/tJz9FF0rYl7Jw86OJMA==",
+      "path": "materialdesignthemes.mahapps/0.3.0",
+      "hashPath": "materialdesignthemes.mahapps.0.3.0.nupkg.sha512"
+    },
+    "MaterialDesignThemes.Wpf/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-goEShYguOoPYJ+oBtWWMEsZFK5CL+524m2fekyLQaMkcECu2K9mYv0yJiXARQM6qr6YdF6iDuR0Bx9BunrLFzQ==",
+      "path": "materialdesignthemes.wpf/1.0.1",
+      "hashPath": "materialdesignthemes.wpf.1.0.1.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
       "type": "package",
@@ -2691,12 +2784,12 @@
       "path": "microsoft.codeanalysis.visualbasic/1.3.0",
       "hashPath": "microsoft.codeanalysis.visualbasic.1.3.0.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.5.0": {
+    "Microsoft.CSharp/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
-      "path": "microsoft.csharp/4.5.0",
-      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+      "sha512": "sha512-kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
+      "path": "microsoft.csharp/4.6.0",
+      "hashPath": "microsoft.csharp.4.6.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/2.1.4": {
       "type": "package",
@@ -3195,6 +3288,13 @@
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
     },
+    "System.Data.DataSetExtensions/4.6.0-preview3.19128.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZFJYYi41Wf4xlFKuuRUblw8yThgzBTYeZTs7eGU7sDiu+X+BmeIdT3pstCrmLpDyflDIBuKX1VYmBCGKo14h6w==",
+      "path": "system.data.datasetextensions/4.6.0-preview3.19128.7",
+      "hashPath": "system.data.datasetextensions.4.6.0-preview3.19128.7.nupkg.sha512"
+    },
     "System.Diagnostics.Debug/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3691,6 +3791,13 @@
       "sha512": "sha512-YVMK0Bt/A43RmwizJoZ22ei2nmrhobgeiYwFzC4YAN+nue8RF6djXDMog0UCn+brerQoYVyaS+ghy9P/MUVcmw==",
       "path": "system.text.encoding.extensions/4.3.0",
       "hashPath": "system.text.encoding.extensions.4.3.0.nupkg.sha512"
+    },
+    "System.Text.Json/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "path": "system.text.json/4.7.2",
+      "hashPath": "system.text.json.4.7.2.nupkg.sha512"
     },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",

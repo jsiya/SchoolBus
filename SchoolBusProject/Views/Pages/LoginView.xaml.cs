@@ -24,5 +24,6 @@ namespace SchoolBusProject.Views.Pages
         {
             InitializeComponent();
         }
+
     }
 }

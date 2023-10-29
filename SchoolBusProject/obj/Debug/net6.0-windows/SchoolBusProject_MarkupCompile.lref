@@ -1,7 +1,14 @@
 ﻿
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\App.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\CarsView.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\ClassesView.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\DriversView.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\HolidaysView.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\LoginView.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\MainView.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\NavRailView.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\ParentsView.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\StudentsView.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Windows\CreateCarWindow.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Windows\CreateClassWindow.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Windows\CreateDriverWindow.xaml;;

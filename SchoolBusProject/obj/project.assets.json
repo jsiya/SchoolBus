@@ -39,6 +39,26 @@
           "lib/netcoreapp1.0/CommonServiceLocator.dll": {}
         }
       },
+      "ControlzEx/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/ControlzEx.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ControlzEx.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -92,6 +112,25 @@
           }
         }
       },
+      "MahApps.Metro/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "ControlzEx": "4.3.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/MahApps.Metro.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MahApps.Metro.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "MaterialDesignColors/2.1.4": {
         "type": "package",
         "compile": {
@@ -124,6 +163,41 @@
         "build": {
           "build/MaterialDesignThemes.targets": {}
         }
+      },
+      "MaterialDesignThemes.MahApps/0.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MahApps.Metro": "2.0.0",
+          "MaterialDesignColors": "2.1.4",
+          "MaterialDesignThemes": "4.9.0"
+        },
+        "compile": {
+          "lib/net6.0/MaterialDesignThemes.MahApps.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MaterialDesignThemes.MahApps.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "MaterialDesignThemes.Wpf/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "1.0.1",
+          "Microsoft.CSharp": "4.6.0",
+          "System.Data.DataSetExtensions": "4.6.0-preview3.19128.7"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
         "type": "package"
@@ -214,7 +288,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.6.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -1369,6 +1443,17 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Console.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Data.DataSetExtensions/4.6.0-preview3.19128.7": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {
             "related": ".xml"
           }
         }
@@ -2926,6 +3011,19 @@
           }
         }
       },
+      "System.Text.Json/4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Text.RegularExpressions/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3310,6 +3408,30 @@
         "lib/netstandard2.0/CommonServiceLocator.dll"
       ]
     },
+    "ControlzEx/4.3.0": {
+      "sha512": "I7PKmQNIMO9+s4s50WXOApotnyEKL9G8vvYrZY7CLe7nufXwRSv+vWPrd4BYwZDQiWHbBwnXsC8zUPgPnEWr6g==",
+      "type": "package",
+      "path": "controlzex/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "controlzex.4.3.0.nupkg.sha512",
+        "controlzex.nuspec",
+        "lib/net45/ControlzEx.dll",
+        "lib/net45/ControlzEx.pdb",
+        "lib/net45/ControlzEx.xml",
+        "lib/net462/ControlzEx.dll",
+        "lib/net462/ControlzEx.pdb",
+        "lib/net462/ControlzEx.xml",
+        "lib/netcoreapp3.0/ControlzEx.dll",
+        "lib/netcoreapp3.0/ControlzEx.pdb",
+        "lib/netcoreapp3.0/ControlzEx.xml",
+        "lib/netcoreapp3.1/ControlzEx.dll",
+        "lib/netcoreapp3.1/ControlzEx.pdb",
+        "lib/netcoreapp3.1/ControlzEx.xml",
+        "logo-mini.png"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -3344,6 +3466,33 @@
         "runtimes/win7-arm/native/libuv.dll",
         "runtimes/win7-x64/native/libuv.dll",
         "runtimes/win7-x86/native/libuv.dll"
+      ]
+    },
+    "MahApps.Metro/2.0.0": {
+      "sha512": "btjlE3Q8iebJB+4TBJZLcJBQZshKYqfkcATj9AS8veq4a506uE71NOTE1OSoavOJ70xasBjcdc+VuN17l+kIqw==",
+      "type": "package",
+      "path": "mahapps.metro/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MahApps.Metro.dll",
+        "lib/net452/MahApps.Metro.pdb",
+        "lib/net452/MahApps.Metro.xml",
+        "lib/net46/MahApps.Metro.dll",
+        "lib/net46/MahApps.Metro.pdb",
+        "lib/net46/MahApps.Metro.xml",
+        "lib/net47/MahApps.Metro.dll",
+        "lib/net47/MahApps.Metro.pdb",
+        "lib/net47/MahApps.Metro.xml",
+        "lib/netcoreapp3.0/MahApps.Metro.dll",
+        "lib/netcoreapp3.0/MahApps.Metro.pdb",
+        "lib/netcoreapp3.0/MahApps.Metro.xml",
+        "lib/netcoreapp3.1/MahApps.Metro.dll",
+        "lib/netcoreapp3.1/MahApps.Metro.pdb",
+        "lib/netcoreapp3.1/MahApps.Metro.xml",
+        "mahapps.metro.2.0.0.nupkg.sha512",
+        "mahapps.metro.logo.png",
+        "mahapps.metro.nuspec"
       ]
     },
     "MaterialDesignColors/2.1.4": {
@@ -3409,6 +3558,39 @@
         "materialdesignthemes.4.9.0.nupkg.sha512",
         "materialdesignthemes.nuspec",
         "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "MaterialDesignThemes.MahApps/0.3.0": {
+      "sha512": "E40dJiXbP9rHiuvZOyZTIanK8BvIM2YM1lZi20m3XQP0HUoZBdjuTWZEdaAtcYWNsz/tJz9FF0rYl7Jw86OJMA==",
+      "type": "package",
+      "path": "materialdesignthemes.mahapps/0.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/MaterialDesignThemes.MahApps.Icon.png",
+        "lib/net462/MaterialDesignThemes.MahApps.dll",
+        "lib/net462/MaterialDesignThemes.MahApps.pdb",
+        "lib/net6.0/MaterialDesignThemes.MahApps.dll",
+        "lib/net6.0/MaterialDesignThemes.MahApps.pdb",
+        "lib/net7.0/MaterialDesignThemes.MahApps.dll",
+        "lib/net7.0/MaterialDesignThemes.MahApps.pdb",
+        "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.dll",
+        "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.pdb",
+        "materialdesignthemes.mahapps.0.3.0.nupkg.sha512",
+        "materialdesignthemes.mahapps.nuspec"
+      ]
+    },
+    "MaterialDesignThemes.Wpf/1.0.1": {
+      "sha512": "goEShYguOoPYJ+oBtWWMEsZFK5CL+524m2fekyLQaMkcECu2K9mYv0yJiXARQM6qr6YdF6iDuR0Bx9BunrLFzQ==",
+      "type": "package",
+      "path": "materialdesignthemes.wpf/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MaterialDesignThemes.Wpf.dll",
+        "lib/netcoreapp3.0/MaterialDesignThemes.Wpf.dll",
+        "materialdesignthemes.wpf.1.0.1.nupkg.sha512",
+        "materialdesignthemes.wpf.nuspec"
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
@@ -3484,10 +3666,10 @@
         "microsoft.codeanalysis.visualbasic.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.6.0": {
+      "sha512": "kxn3M2rnAGy5N5DgcIwcE8QTePWU/XiYcQVzn9HqTls2NKluVzVSmVWRjK7OUPWbljCXuZxHyhEz9kPRIQeXow==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3500,6 +3682,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -3509,7 +3692,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.6.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -5390,6 +5573,26 @@
         "ref/xamarinwatchos10/_._",
         "system.console.4.3.0.nupkg.sha512",
         "system.console.nuspec"
+      ]
+    },
+    "System.Data.DataSetExtensions/4.6.0-preview3.19128.7": {
+      "sha512": "ZFJYYi41Wf4xlFKuuRUblw8yThgzBTYeZTs7eGU7sDiu+X+BmeIdT3pstCrmLpDyflDIBuKX1VYmBCGKo14h6w==",
+      "type": "package",
+      "path": "system.data.datasetextensions/4.6.0-preview3.19128.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/_._",
+        "lib/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "lib/netstandard2.0/System.Data.DataSetExtensions.xml",
+        "ref/net45/_._",
+        "ref/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "system.data.datasetextensions.4.6.0-preview3.19128.7.nupkg.sha512",
+        "system.data.datasetextensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Diagnostics.Debug/4.3.0": {
@@ -8968,6 +9171,28 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
+    "System.Text.Json/4.7.2": {
+      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "type": "package",
+      "path": "system.text.json/4.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.4.7.2.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Text.RegularExpressions/4.3.0": {
       "sha512": "RpT2DA+L660cBt1FssIE9CAGpLFdFPuheB7pLpKpn6ZXNby7jDERe8Ua/Ne2xGiwLVG2JOqziiaVCGDon5sKFA==",
       "type": "package",
@@ -9742,6 +9967,8 @@
     "net6.0-windows7.0": [
       "MaterialDesignColors >= 2.1.4",
       "MaterialDesignThemes >= 4.9.0",
+      "MaterialDesignThemes.MahApps >= 0.3.0",
+      "MaterialDesignThemes.Wpf >= 1.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.23",
       "MvvmLightLibs >= 5.4.1.1",
       "SchoolBusDataAccess >= 1.0.0",
@@ -9807,6 +10034,14 @@
           "MaterialDesignThemes": {
             "target": "Package",
             "version": "[4.9.0, )"
+          },
+          "MaterialDesignThemes.MahApps": {
+            "target": "Package",
+            "version": "[0.3.0, )"
+          },
+          "MaterialDesignThemes.Wpf": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
