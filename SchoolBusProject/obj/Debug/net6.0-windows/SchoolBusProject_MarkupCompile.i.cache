@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\App.xaml
-11407045341
+8278146631
 
-5-1338376682
-2182065114063
-MainWindow.xaml;
+12367981578
+2261209095935
+Views\Pages\LoginView.xaml;Views\Pages\MainView.xaml;Views\Windows\CreateCarWindow.xaml;Views\Windows\CreateClassWindow.xaml;Views\Windows\CreateDriverWindow.xaml;Views\Windows\CreateParentWindow.xaml;Views\Windows\CreateStudentWindow.xaml;Views\Windows\MainWindow.xaml;
 
-False
+True
 

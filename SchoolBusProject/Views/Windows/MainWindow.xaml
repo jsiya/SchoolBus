@@ -1,0 +1,51 @@
+﻿<Window x:Class="SchoolBusProject.Views.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolBusProject.Views.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent">
+    <Border Background="{DynamicResource PrimaryHueLightBrush}"
+            CornerRadius="20">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!--Header-->
+            <StackPanel Grid.Row="0"
+                        Orientation="Horizontal"
+                        FlowDirection="RightToLeft">
+                <Button
+                    Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                    ToolTip="Close"
+                    Click="CloseButtonClick">
+                    <materialDesign:PackIcon  Kind="Close" />
+                </Button>
+                <Button
+                    Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryDarkButton}"
+                    ToolTip="Minimize"
+                    Click="MinimizeButtonClick">
+                    <materialDesign:PackIcon  Kind="Minimize" />
+                </Button>
+            </StackPanel>
+            
+            <!--Main-->
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480856.png"
+                    Stretch="UniformToFill"
+                    />
+        
+            </Grid.Background>
+            
+        </Grid>
+    </Border>
+</Window>
