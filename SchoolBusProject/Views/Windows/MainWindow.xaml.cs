@@ -1,53 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SchoolBusProject.ViewModels;
+using SchoolBusProject.Views.Pages;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace SchoolBusProject.Views.Windows
+namespace SchoolBusProject.Views.Windows;
+public partial class MainWindow : Window
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
+        InitializeComponent();
+        DataContext = new MainWindowViewModel(MainFrame, new LoginView());
+    }
+
+    private void CloseButtonClick(object sender, RoutedEventArgs e)
+    {
+        try
         {
-            InitializeComponent();
+            Close();
         }
-
-        private void CloseButtonClick(object sender, RoutedEventArgs e)
+        catch (Exception ex)
         {
-            try
-            {
-                Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            MessageBox.Show(ex.Message);
         }
-        
-        private void MinimizeButtonClick(object sender, RoutedEventArgs e)
+    }
+    
+    private void MinimizeButtonClick(object sender, RoutedEventArgs e)
+    {
+        try
         {
-            try
-            {
-                this.WindowState = WindowState.Minimized;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            this.WindowState = WindowState.Minimized;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
         }
     }
 }

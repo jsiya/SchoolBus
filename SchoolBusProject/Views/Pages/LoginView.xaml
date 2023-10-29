@@ -4,11 +4,61 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SchoolBusProject.Views.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="1000"
       Title="LoginView">
 
-    <Grid>
-        
+    <Grid Background="Transparent">
+        <materialDesign:Card
+            UniformCornerRadius="20"
+            Width="400"
+            Height="300"
+            Opacity="0.85"
+            materialDesign:ElevationAssist.Elevation="Dp8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock 
+                    Text="LOGIN" 
+                    Grid.Row="0" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="40"
+                    Opacity="0.8"
+                    />
+                <TextBox Grid.Row="1"
+                         Name="UsernameTextBox"
+                         Width="280"
+                         Height="50"
+                         materialDesign:HintAssist.Hint="username"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                         Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         >
+                </TextBox>
+                <PasswordBox Grid.Row="2"
+                             x:Name="PasswordBox"
+                             Width="280"
+                             Height="50"
+                             materialDesign:HintAssist.Hint="password"
+                             Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                             
+                             >
+                </PasswordBox>
+                <Button Grid.Row="3"
+                        Name="LoginButton"
+                        Height="40"
+                        Width="170"
+                        materialDesign:ButtonAssist.CornerRadius="10"
+                        BorderThickness="0"
+                        Content="Sign In"
+                        
+                        />
+            </Grid>
+        </materialDesign:Card>
     </Grid>
 </Page>

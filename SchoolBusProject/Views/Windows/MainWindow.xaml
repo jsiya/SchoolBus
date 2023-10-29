@@ -18,15 +18,24 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480856.png"
+                    Stretch="UniformToFill"
+                    />
+            </Grid.Background>
+
             <!--Header-->
             <StackPanel Grid.Row="0"
                         Orientation="Horizontal"
-                        FlowDirection="RightToLeft">
+                        FlowDirection="RightToLeft"
+                        >
                 <Button
                     Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
                     ToolTip="Close"
-                    Click="CloseButtonClick">
+                    Click="CloseButtonClick"
+                    Margin="5 0">
                     <materialDesign:PackIcon  Kind="Close" />
                 </Button>
                 <Button
@@ -38,14 +47,15 @@
             </StackPanel>
             
             <!--Main-->
-            <Grid.Background>
-                <ImageBrush
-                    ImageSource="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480856.png"
-                    Stretch="UniformToFill"
-                    />
-        
-            </Grid.Background>
-            
+            <Grid Grid.Row="1">
+                <Frame 
+               x:Name="MainFrame" 
+               Grid.Row="1"
+               NavigationUIVisibility="Hidden"
+               Margin="0 10 0 10"
+               />
+            </Grid>
+                      
         </Grid>
     </Border>
 </Window>
