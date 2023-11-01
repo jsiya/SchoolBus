@@ -4,11 +4,194 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SchoolBusProject.Views.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="660" d:DesignWidth="1000"
       Title="RidesView">
 
-    <Grid>
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="{DynamicResource PrimaryHueLightBrush}" >
+            <TextBlock Text="Ride"
+                       Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                       FontSize="40"
+                       Margin="10 5"
+                       FontWeight="DemiBold"/>
+
+            <TextBox x:Name="FirstnameTextBox" 
+                     Margin="10 5"
+                     materialDesign:HintAssist.Hint="Firstname"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+
+            <TextBox x:Name="CarNameTextBox" 
+                     Margin="10 5"
+                     materialDesign:HintAssist.Hint="Car Name"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+
+            <TextBox x:Name="CarNumberTextBox" 
+                     Margin="10 5"
+                     materialDesign:HintAssist.Hint="Car Number"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="StudentsAttendTextBlock"
+                       Margin="10 5"
+                       Text="Students Attend : "
+                       FontSize="15"
+                           FontWeight="DemiBold"
+                       Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                       />
+                <TextBlock
+                       Grid.Column="1"
+                        Margin="10 5"
+                       Text="5"
+                       FontSize="15"
+                       />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="MaxSeatsTextBlock"
+                       Margin="10 5"
+                       Text="Max Seats: "
+                       FontSize="15"
+                           FontWeight="DemiBold"
+                       Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                       />
+                <TextBlock
+                       Grid.Column="1"
+                        Margin="10 5"
+                       Text="8"
+                       FontSize="15"
+                       />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.1*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="DatePickerTextBox"
+                           Grid.Column="0"
+                           Margin="10 5"
+                           Text="Reservation Date:"
+                           FontSize="15"
+                           FontWeight="DemiBold"
+                           Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
+
+                <DatePicker Grid.Column="1"
+                            Margin="10 5"/>
+
+            </Grid>
+
+            <Button Width="100"
+                    Content="Create"
+                    HorizontalAlignment="Right"
+                    Margin="30 10"/>
+
+
+
+        </StackPanel>
         
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0"
+                         Name="UsernameTextBox"
+                         Width="280"
+                         Height="50"
+                         Margin="20 0"
+                         HorizontalAlignment="Left"
+                         materialDesign:HintAssist.Hint="username"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+            <DataGrid Grid.Row="1"
+                  CanUserDeleteRows="True"
+                      Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Firstname" Width="120"/>
+                    <DataGridTextColumn Header="Lastname" Width="120"/>
+                    <DataGridTextColumn Header="Parent" Width="120"/>
+                    <DataGridTextColumn Header="Class" Width="120"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Width="100" Height="30">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0"
+                                        Name="DeleteButton"
+                                        Margin="2"
+                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                                    <Button Grid.Column="1"
+                                        Name="UpdateButton"
+                                        Margin="2"
+                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid Grid.Row="2"
+                  CanUserDeleteRows="True"
+                      Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Firstname" Width="120"/>
+                    <DataGridTextColumn Header="Lastname" Width="120"/>
+                    <DataGridTextColumn Header="Parent" Width="120"/>
+                    <DataGridTextColumn Header="Class" Width="120"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Width="100" Height="30">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0"
+                                        Name="DeleteButton"
+                                        Margin="2"
+                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                                    <Button Grid.Column="1"
+                                        Name="UpdateButton"
+                                        Margin="2"
+                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </Page>

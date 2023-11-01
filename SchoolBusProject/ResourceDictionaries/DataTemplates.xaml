@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:SchoolBusProject.ViewModels"
+                    xmlns:pageViews="clr-namespace:SchoolBusProject.Views.Pages">
+    <DataTemplate DataType="{x:Type viewModels:MainViewModel}">
+        <pageViews:MainView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type viewModels:LoginViewModel}">
+        <pageViews:LoginView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type viewModels:NavRailViewModel}">
+        <pageViews:NavRailView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:CarsViewModel}">
+        <pageViews:CarsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:ClassesViewModel}">
+        <pageViews:ClassesView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:StudentsViewModel}">
+        <pageViews:StudentsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:ParentsViewModel}">
+        <pageViews:ParentsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:HolidaysViewModel}">
+        <pageViews:HolidaysView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:DriversViewModel}">
+        <pageViews:DriversView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:RidesViewModel}">
+        <pageViews:RidesView/>
+    </DataTemplate>
+    
+</ResourceDictionary>

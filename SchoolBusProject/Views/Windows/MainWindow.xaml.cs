@@ -9,8 +9,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        //DataContext = new MainWindowViewModel(MainFrame, new LoginView());
-        DataContext = new MainWindowViewModel(MainFrame, new NavRailView());
+        DataContext = new MainWindowViewModel(MainFrame);
     }
 
     private void CloseButtonClick(object sender, RoutedEventArgs e)

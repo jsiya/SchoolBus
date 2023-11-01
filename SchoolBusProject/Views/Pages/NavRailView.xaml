@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="660" d:DesignWidth="1000"
-      Title="NavRailView" Background="Transparent">
+      Title="NavRailView" Background="Transparent" DataContextChanged="Page_DataContextChanged">
 
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
@@ -28,7 +28,8 @@
                 VerticalAlignment="Top"
                 Background="Transparent"
                 Style="{StaticResource MaterialDesignActionToggleButton}"
-                ToolTip="MaterialDesignActionLightToggleButton" >
+                ClickMode="Hover"
+                ToolTip="digindigin" >
                 <ToggleButton.Content>
                     <Image Source="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480864.png"
                     Stretch="UniformToFill"
@@ -40,57 +41,75 @@
                     />
                 </materialDesign:ToggleButtonAssist.OnContent>
             </ToggleButton>
-            
+
             <Border Grid.Row="1"
+                    Background="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                    CornerRadius="0 50 0 20"
+                    >
+                <Border Height="460"
+                        VerticalAlignment="Bottom"
                     Background="{DynamicResource PrimaryHueMidBrush}"
                     CornerRadius="0 50 0 20">
-                <Grid>
-                    <StackPanel Margin="0 70 0 70"
+                    <Grid>
+                        <StackPanel Margin="0 70 0 70"
                             Orientation="Vertical"
                             >
-                        <Button Name="RidesBtn"
+                            <Button Name="RidesBtn"
                             Content="Rides"
                             Style="{StaticResource MaterialDesignFlatDarkButton}"
-                            Margin="5 5"/>
-                        <Button Name="ClassesBtn"
+                            Margin="5 5"
+                                    Command="{Binding RideCommand}"/>
+                            <Button Name="ClassesBtn"
                             Content="Classes"
                             Style="{StaticResource MaterialDesignFlatDarkButton}"
                             Margin="5 5"/>
-                        <Button Name="StudentsBtn"
+                            <Button Name="StudentsBtn"
                             Content="Students"
                             Style="{StaticResource MaterialDesignFlatDarkButton}"
                             Margin="5 5"/>
-                        <Button Name="ParentBtn"
+                            <Button Name="ParentBtn"
                             Content="Parents"
                             Style="{StaticResource MaterialDesignFlatDarkButton}"
                             Margin="5 5"/>
-                        <Button Name="DriversBtn"
+                            <Button Name="DriversBtn"
                             Content="Drivers"
                             Style="{StaticResource MaterialDesignFlatDarkButton}"
                             Margin="5 5"/>
-                        <Button Name="CarsBtn"
+                            <Button Name="CarsBtn"
                             Content="Cars"
                             Style="{StaticResource MaterialDesignFlatDarkButton}"
+                                    Command="{Binding CarCommand}"
                             Margin="5 5"/>
-                        <Button Name="HolidaysBtn"
+                            <Button Name="HolidaysBtn"
                             Content="Holidays"
                             Style="{StaticResource MaterialDesignFlatDarkButton}"
                             Margin="5 5"/>
-                    </StackPanel>
-                    <Button
-                        VerticalAlignment="Bottom"
-                        Margin="10 10"
-                        Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Style="{StaticResource MaterialDesignIconForegroundButton}"
-                        ToolTip="MaterialDesignIconForegroundButton">
-                             <materialDesign:PackIcon Kind="Logout" />
-                    </Button>
-                </Grid>
+                        </StackPanel>
+                        <Button VerticalAlignment="Bottom"
+                            Command="{Binding LogOutCommand}"
+                            Margin="10 10"
+                            Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
+                            Style="{StaticResource MaterialDesignIconForegroundButton}"
+                            ToolTip="LogOut">
+                            <materialDesign:PackIcon Kind="Logout" />
+                        </Button>
+                    </Grid>
+                </Border>
             </Border>
         </Grid>
-        <Frame Name="InnerFrame"
-               Grid.Column="1"
-               NavigationUIVisibility="Hidden"/>
+
+        <Grid Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480856.png"
+                    Stretch="UniformToFill"
+                    />
+            </Grid.Background>
+            <Frame Name="InnerFrame"
+                   Content="{Binding CurrentView,Mode=TwoWay}"
+                   Margin="3 10 3 10"
+                   NavigationUIVisibility="Hidden"/>
+        </Grid>
+        
     </Grid>
 </Page>

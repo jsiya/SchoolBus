@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\App.xaml
-16-1106206638
+181279309701
 
-22-1402405662
-229-427328556
-Views\Pages\CarsView.xaml;Views\Pages\ClassesView.xaml;Views\Pages\DriversView.xaml;Views\Pages\HolidaysView.xaml;Views\Pages\LoginView.xaml;Views\Pages\MainView.xaml;Views\Pages\NavRailView.xaml;Views\Pages\ParentsView.xaml;Views\Pages\RidesView.xaml;Views\Pages\StudentsView.xaml;Views\Windows\CreateCarWindow.xaml;Views\Windows\CreateClassWindow.xaml;Views\Windows\CreateDriverWindow.xaml;Views\Windows\CreateParentWindow.xaml;Views\Windows\CreateStudentWindow.xaml;Views\Windows\MainWindow.xaml;
+31-490109548
+2271910350349
+ResourceDictionaries\DataGridStyleDictionary.xaml;ResourceDictionaries\DataTemplates.xaml;Views\Pages\CarsView.xaml;Views\Pages\ClassesView.xaml;Views\Pages\DriversView.xaml;Views\Pages\HolidaysView.xaml;Views\Pages\LoginView.xaml;Views\Pages\MainView.xaml;Views\Pages\NavRailView.xaml;Views\Pages\ParentsView.xaml;Views\Pages\RidesView.xaml;Views\Pages\StudentsView.xaml;Views\Windows\CreateCarWindow.xaml;Views\Windows\CreateClassWindow.xaml;Views\Windows\CreateDriverWindow.xaml;Views\Windows\CreateParentWindow.xaml;Views\Windows\CreateStudentWindow.xaml;Views\Windows\MainWindow.xaml;
 
 True
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolBusProject.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace SchoolBusProject.Views.Pages
         {
             InitializeComponent();
         }
-
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is LoginViewModel viewModel && PasswordBox.Password != null)
+            {
+                viewModel.Password = PasswordBox.Password;
+            }
+        }
     }
 }

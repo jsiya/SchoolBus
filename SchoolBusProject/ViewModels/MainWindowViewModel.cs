@@ -1,19 +1,17 @@
 ﻿using GalaSoft.MvvmLight;
+using SchoolBusProject.Views.Pages;
 using System.ComponentModel;
 using System.Windows.Controls;
 
 namespace SchoolBusProject.ViewModels;
 
-public class MainWindowViewModel : ViewModelBase, INotifyPropertyChanged
+public class MainWindowViewModel : ViewModelBase
 {
-    //MainWindowun backinde vermisem datacontext kimi - S
     public Frame ViewFrame { get; set; }
-    public MainWindowViewModel(Frame View, Page page)
+    public MainWindowViewModel(Frame View)
     {
-        ViewFrame = View;//bu viewdaki frame deyise bilmek ucun bunu elemiyib ancaq bind eliyende nese error verir - S
-        page.DataContext = new LoginViewModel(ViewFrame); // buda frame-e vereciyimiz page ucun datacontext vere bilek deye -S
-        ViewFrame.Content = page;
+        ViewFrame = View;
+        ViewFrame.Content = new LoginViewModel(ViewFrame);
     }
 
-    public event PropertyChangedEventHandler? PropertyChanged;
 }

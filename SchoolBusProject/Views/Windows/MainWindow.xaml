@@ -19,13 +19,6 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Grid.Background>
-                <ImageBrush
-                    ImageSource="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480856.png"
-                    Stretch="UniformToFill"
-                    />
-            </Grid.Background>
-
             <!--Header-->
             <TextBlock Text="School Bus"
                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
@@ -57,7 +50,7 @@
                x:Name="MainFrame" 
                Grid.Row="1"
                NavigationUIVisibility="Hidden"
-               Margin="-5 -5"
+               Margin="-5 0 -5 -5"
                />
             </Grid>
 

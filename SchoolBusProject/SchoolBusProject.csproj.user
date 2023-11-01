@@ -31,6 +31,9 @@
     <Compile Update="Views\Pages\ParentsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\RidesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\StudentsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +57,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ResourceDictionaries\DataGridStyleDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionaries\DataTemplates.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\CarsView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -76,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\ParentsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\RidesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\StudentsView.xaml">

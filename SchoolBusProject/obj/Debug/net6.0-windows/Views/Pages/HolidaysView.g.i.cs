@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using MaterialDesignThemes.MahApps;
 using MaterialDesignThemes.Wpf;
 using MaterialDesignThemes.Wpf.Converters;
 using MaterialDesignThemes.Wpf.Transitions;
@@ -57,7 +56,7 @@ namespace SchoolBusProject.Views.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SchoolBusProject;V1.0.0.0;component/views/pages/holidaysview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SchoolBusProject;component/views/pages/holidaysview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Pages\HolidaysView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
