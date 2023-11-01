@@ -130,7 +130,8 @@
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
             <DataGrid Grid.Row="1"
                   CanUserDeleteRows="True"
-                      Margin="5">
+                      Margin="5"
+                      >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Firstname" Width="120"/>
                     <DataGridTextColumn Header="Lastname" Width="120"/>

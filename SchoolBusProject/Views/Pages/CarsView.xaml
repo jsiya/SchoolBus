@@ -9,12 +9,14 @@
       d:DesignHeight="600" d:DesignWidth="830"
       Title="CarsView">
 
-    <Grid Background="White">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Border Grid.Row="0"
+                CornerRadius="5"
+              Background="{DynamicResource PrimaryHueLightBrush}">
             <StackPanel Orientation="Horizontal">
                 <Button Content="{materialDesign:PackIcon Kind=Plus}"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
@@ -27,11 +29,11 @@
                          materialDesign:HintAssist.Hint="username"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
             </StackPanel>
-        </Grid>
+        </Border>
         <DataGrid Grid.Row="1"
                   CanUserDeleteRows="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="50" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Driver Fullname" Width="150" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Name" Width="150" Binding="{Binding FirstName}"/>
                 <DataGridTextColumn Header="Number" Width="150" Binding="{Binding LastName}"/>
                 <DataGridTextColumn Header="Seat Count" Width="150" Binding="{Binding LastName}"/>

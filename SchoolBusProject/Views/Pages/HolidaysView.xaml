@@ -9,6 +9,7 @@
       d:DesignHeight="660" d:DesignWidth="1000"
       Title="HolidaysView">
     <Grid >
-        
+        <Calendar materialDesign:CalendarAssist.Orientation="Horizontal" 
+                  Margin="200 150"/>
     </Grid>
 </Page>

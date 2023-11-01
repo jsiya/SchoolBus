@@ -4,11 +4,60 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SchoolBusProject.Views.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="830"
       Title="ClassesView">
 
-    <Grid>
-        
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"
+                CornerRadius="5"
+              Background="{DynamicResource PrimaryHueLightBrush}">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="{materialDesign:PackIcon Kind=Plus}"
+                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                        ToolTip="Icon"
+                        Margin="5 0"/>
+                <TextBox Grid.Row="1"
+                         Name="UsernameTextBox"
+                         Width="280"
+                         Height="50"
+                         materialDesign:HintAssist.Hint="username"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+            </StackPanel>
+        </Border>
+        <DataGrid Grid.Row="1"
+                  CanUserDeleteRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Width="120" />
+                <DataGridTextColumn Header="Class" Width="120"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid Width="100" Height="30">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0"
+                                        Name="DeleteButton"
+                                        Margin="2"
+                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                                <Button Grid.Column="1"
+                                        Name="UpdateButton"
+                                        Margin="2"
+                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

@@ -35,7 +35,6 @@ public class NavRailViewModel : ViewModelBase, INotifyPropertyChanged
     public ICommand? ParentCommand { get; set; }
     public ICommand? StudentCommand { get; set; }
     public ICommand? HolidayCommand { get; set; }
-    public ICommand? ExitCommand { get; set; }
     public ICommand? LogOutCommand { get; set; }
     public NavRailViewModel(Frame frame, Admin admin)
     {
@@ -43,13 +42,39 @@ public class NavRailViewModel : ViewModelBase, INotifyPropertyChanged
         CurrentAdmin = admin;
         CurrentView = new RidesViewModel();
         RideCommand = new RelayCommand(NavigateToRidesPage, true);
+        ClassCommand = new RelayCommand(NavigateToClassPage, true);
         CarCommand = new RelayCommand(NavigateToCarsPage, true);
+        DriverCommand = new RelayCommand(NavigateToDriversPage, true);
+        ParentCommand = new RelayCommand(NavigateToParentsPage, true);
+        StudentCommand = new RelayCommand(NavigateToStudentsPage, true);
+        HolidayCommand = new RelayCommand(NavigateToHolidayPage, true);
         LogOutCommand = new RelayCommand(NavigateToBack, true);
     }
 
     private void NavigateToRidesPage()
     {
         InnerFrame.Content = new RidesViewModel();
+    }
+    private void NavigateToClassPage()
+    {
+        InnerFrame.Content = new ClassesViewModel();
+    }
+    private void NavigateToDriversPage()
+    {
+        InnerFrame.Content = new DriversViewModel();
+    }
+    private void NavigateToParentsPage()
+    {
+        InnerFrame.Content = new ParentsViewModel();
+    }
+    private void NavigateToStudentsPage()
+    {
+        InnerFrame.Content = new StudentsViewModel();
+    }
+
+    private void NavigateToHolidayPage()
+    {
+        InnerFrame.Content = new HolidaysViewModel();
     }
 
     private void NavigateToCarsPage()
