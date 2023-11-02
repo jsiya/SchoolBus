@@ -1,13 +1,31 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GalaSoft.MvvmLight.CommandWpf;
+using SchoolBusProject.Views.Windows;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
-namespace SchoolBusProject.ViewModels
+namespace SchoolBusProject.ViewModels;
+
+public class CarsViewModel : ViewModelBase, INotifyPropertyChanged
 {
-    class CarsViewModel : ViewModelBase
+    public ICommand? AddCar { get; set; }
+
+    public CarsViewModel()
     {
+        AddCar = new RelayCommand(OpenCreateCarWindow, true);
     }
+
+    private void OpenCreateCarWindow()
+    {
+        CreateCarWindow createCarWindow = new CreateCarWindow();
+        createCarWindow.Show();
+    }
+
+    public void OnPropertyChanged([CallerMemberName] string? name = null)
+    {
+        PropChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+    }
+
+    public event PropertyChangedEventHandler? PropChanged;
 }

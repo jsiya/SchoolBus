@@ -51,7 +51,7 @@
                     Background="{DynamicResource PrimaryHueMidBrush}"
                     CornerRadius="0 50 0 20">
                     <Grid>
-                        <StackPanel Margin="0 70 0 70"
+                        <StackPanel Margin="0 60 0 60"
                             Orientation="Vertical"
                             >
                             <Button Name="RideBtn"

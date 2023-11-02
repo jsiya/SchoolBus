@@ -16,12 +16,14 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="0"
                 CornerRadius="5"
+                Margin="5"
               Background="{DynamicResource PrimaryHueLightBrush}">
             <StackPanel Orientation="Horizontal">
                 <Button Content="{materialDesign:PackIcon Kind=Plus}"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         ToolTip="IcAdd Classon"
-                        Margin="5 0"/>
+                        Margin="5 0"
+                        Command="{Binding AddClass}"/>
                 <TextBox Grid.Row="1"
                          Name="UsernameTextBox"
                          Width="280"
@@ -31,6 +33,7 @@
             </StackPanel>
         </Border>
         <DataGrid Grid.Row="1"
+                  Margin="5"
                   CanUserDeleteRows="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Width="120" />

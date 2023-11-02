@@ -1,9 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
-using SchoolBusProject.Views.Pages;
-using System.ComponentModel;
 using System.Windows.Controls;
 
-namespace SchoolBusProject.ViewModels;
+namespace SchoolBusProject.ViewModels.WindowsViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {

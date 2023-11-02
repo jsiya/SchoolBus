@@ -1,5 +1,4 @@
-﻿using SchoolBusProject.ViewModels;
-using SchoolBusProject.Views.Pages;
+﻿using SchoolBusProject.ViewModels.WindowsViewModels;
 using System;
 using System.Windows;
 
