@@ -4,9 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolBusProject.Views.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CreateClassWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Title="CreateClassWindow" Height="340" Width="440">
+    <Border Background="#E9E9EB"
+            CornerRadius="20">
+        <Grid Margin="6">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            
+            <Button
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                ToolTip="Close"
+                Margin="5 0"
+                HorizontalAlignment="Right"
+                Click="Button_Click">
+                <materialDesign:PackIcon  Kind="Close" />
+            </Button>
+                
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="New Class"
+                           Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                           FontSize="35"
+                           FontWeight="DemiBold"
+                           HorizontalAlignment="Left"
+                           Margin="50 20"/>
+                <TextBox x:Name="ClassNameTextBox" 
+                         Grid.Row="1"
+                     Margin="50 5"
+                     materialDesign:HintAssist.Hint="Class Name"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+                <Button Grid.Row="2"
+                        Content="Create"
+                        Width="100"/>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

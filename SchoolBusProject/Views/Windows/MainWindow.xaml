@@ -10,11 +10,11 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Background="Transparent">
-    <Border Background="{DynamicResource PrimaryHueMidForegroundBrush}"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border Background="#E9E9EB"
             CornerRadius="20">
-        <Grid Margin="5"
-              >
+        <Grid Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>

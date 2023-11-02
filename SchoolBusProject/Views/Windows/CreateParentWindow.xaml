@@ -4,9 +4,78 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolBusProject.Views.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CreateParentWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Title="CreateCarWindow" Height="500" Width="440">
+    <Border Background="#E9E9EB"
+            CornerRadius="20">
+        <Grid Margin="6">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+
+            <Button Name="CloseBtn"
+                    HorizontalAlignment="Right"
+                Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                ToolTip="Close"
+                Margin="5 0"
+                    Click="CloseBtn_Click" >
+                <materialDesign:PackIcon  Kind="Close" />
+            </Button>
+
+            <StackPanel Grid.Row="1">
+
+                <TextBlock Text="New Parent"
+                           Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                           FontSize="35"
+                           FontWeight="DemiBold"
+                           HorizontalAlignment="Left"
+                           Margin="50 20"/>
+                <TextBox x:Name="FirstnameTextBox" 
+                     Margin="50 5"
+                     materialDesign:HintAssist.Hint="FirstName"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+                <TextBox x:Name="LastnameTextBox" 
+                     Margin="50 5"
+                     materialDesign:HintAssist.Hint="Lastname"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+                <TextBox x:Name="PhoneTextBox" 
+                     Margin="50 5"
+                     materialDesign:HintAssist.Hint="Phone"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+                <TextBox x:Name="UsernameTextBox" 
+                     Margin="50 5"
+                     materialDesign:HintAssist.Hint="Username"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+                <TextBox x:Name="PasswordTextBox" 
+                     Margin="50 5"
+                     materialDesign:HintAssist.Hint="Password"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                     />
+                <Button Content="Create"
+                        Width="100"
+                        Margin="20"/>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Window>

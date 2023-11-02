@@ -15,14 +15,18 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Background="{DynamicResource PrimaryHueLightBrush}" >
-            <TextBlock Text="Ride"
+        <Border CornerRadius="7"
+                Margin="5"
+                Background="{DynamicResource PrimaryHueLightBrush}">
+            <StackPanel Background="Transparent" 
+                        >
+                <TextBlock Text="Ride"
                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                        FontSize="40"
                        Margin="10 5"
                        FontWeight="DemiBold"/>
 
-            <TextBox x:Name="FirstnameTextBox" 
+                <TextBox x:Name="FirstnameTextBox" 
                      Margin="10 5"
                      materialDesign:HintAssist.Hint="Firstname"
                      Height="40"
@@ -30,7 +34,7 @@
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
 
-            <TextBox x:Name="CarNameTextBox" 
+                <TextBox x:Name="CarNameTextBox" 
                      Margin="10 5"
                      materialDesign:HintAssist.Hint="Car Name"
                      Height="40"
@@ -38,7 +42,7 @@
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
 
-            <TextBox x:Name="CarNumberTextBox" 
+                <TextBox x:Name="CarNumberTextBox" 
                      Margin="10 5"
                      materialDesign:HintAssist.Hint="Car Number"
                      Height="40"
@@ -46,53 +50,53 @@
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock x:Name="StudentsAttendTextBlock"
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="StudentsAttendTextBlock"
                        Margin="10 5"
                        Text="Students Attend : "
                        FontSize="15"
                            FontWeight="DemiBold"
                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                        />
-                <TextBlock
+                    <TextBlock
                        Grid.Column="1"
                         Margin="10 5"
                        Text="5"
                        FontSize="15"
                        />
-            </Grid>
+                </Grid>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock x:Name="MaxSeatsTextBlock"
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="MaxSeatsTextBlock"
                        Margin="10 5"
                        Text="Max Seats: "
                        FontSize="15"
                            FontWeight="DemiBold"
                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                        />
-                <TextBlock
+                    <TextBlock
                        Grid.Column="1"
                         Margin="10 5"
                        Text="8"
                        FontSize="15"
                        />
-            </Grid>
+                </Grid>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1.1*"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.1*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock x:Name="DatePickerTextBox"
+                    <TextBlock x:Name="DatePickerTextBox"
                            Grid.Column="0"
                            Margin="10 5"
                            Text="Reservation Date:"
@@ -100,19 +104,20 @@
                            FontWeight="DemiBold"
                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
 
-                <DatePicker Grid.Column="1"
+                    <DatePicker Grid.Column="1"
                             Margin="10 5"/>
 
-            </Grid>
+                </Grid>
 
-            <Button Width="100"
+                <Button Width="100"
                     Content="Create"
                     HorizontalAlignment="Right"
                     Margin="30 10"/>
 
 
 
-        </StackPanel>
+            </StackPanel>
+        </Border>
 
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -120,19 +125,15 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0"
-                    Background="{DynamicResource PrimaryHueLightBrush}"
-                    CornerRadius="5"
-                    Margin="5">
-                <TextBox 
-                         Name="UsernameTextBox"
-                         Width="280"
-                         Height="50"
-                         Margin="20 0"
-                         HorizontalAlignment="Left"
-                         materialDesign:HintAssist.Hint="Search"
-                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
-            </Border>
+
+            <TextBox 
+                     Name="UsernameTextBox"
+                     Width="280"
+                     Height="48"
+                     Margin="5"
+                     HorizontalAlignment="Right"
+                     materialDesign:HintAssist.Hint="Search"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
             <DataGrid Grid.Row="1"
                   CanUserDeleteRows="True"
                       Margin="5"

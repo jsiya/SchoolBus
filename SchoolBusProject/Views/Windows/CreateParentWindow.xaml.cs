@@ -23,5 +23,10 @@ namespace SchoolBusProject.Views.Windows
         {
             InitializeComponent();
         }
+
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
