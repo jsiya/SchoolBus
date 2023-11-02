@@ -112,3 +112,5 @@ C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-wi
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\SchoolBusProject.pdb
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\SchoolBusProject.genruntimeconfig.cache
 C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\ref\SchoolBusProject.dll
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\Views\Pages\CreateRideView.g.cs
+C:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\obj\Debug\net6.0-windows\Views\Pages\CreateRideView.baml

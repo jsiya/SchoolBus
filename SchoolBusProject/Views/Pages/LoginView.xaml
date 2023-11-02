@@ -15,7 +15,8 @@
             Width="400"
             Height="300"
             Opacity="0.8"
-            materialDesign:ElevationAssist.Elevation="Dp8">
+            materialDesign:ElevationAssist.Elevation="Dp8"
+            Background="{DynamicResource PrimaryHueLightBrush}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.5*"/>

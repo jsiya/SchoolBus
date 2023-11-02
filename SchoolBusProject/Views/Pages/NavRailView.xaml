@@ -54,11 +54,16 @@
                         <StackPanel Margin="0 70 0 70"
                             Orientation="Vertical"
                             >
+                            <Button Name="RideBtn"
+                                    Content="Create Ride"
+                                    Style="{StaticResource MaterialDesignFlatDarkButton}"
+                                    Margin="5 5"
+                                    Command="{Binding RideCommand}"/>
                             <Button Name="RidesBtn"
                                     Content="Rides"
                                     Style="{StaticResource MaterialDesignFlatDarkButton}"
                                     Margin="5 5"
-                                    Command="{Binding RideCommand}"/>
+                                    Command="{Binding RidesCommand}"/>
                             <Button Name="ClassesBtn"
                                     Content="Classes"
                                     Style="{StaticResource MaterialDesignFlatDarkButton}"
@@ -104,12 +109,6 @@
         </Grid>
 
         <Grid Grid.Column="1">
-            <Grid.Background>
-                <ImageBrush
-                    ImageSource="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480856.png"
-                    Stretch="UniformToFill"
-                    />
-            </Grid.Background>
             <Frame Name="InnerFrame"
                    Content="{Binding CurrentView,Mode=TwoWay}"
                    Margin="3 10 3 10"

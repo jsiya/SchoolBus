@@ -20,13 +20,13 @@
             <StackPanel Orientation="Horizontal">
                 <Button Content="{materialDesign:PackIcon Kind=Plus}"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                        ToolTip="Icon"
+                        ToolTip="IcAdd Classon"
                         Margin="5 0"/>
                 <TextBox Grid.Row="1"
                          Name="UsernameTextBox"
                          Width="280"
                          Height="50"
-                         materialDesign:HintAssist.Hint="username"
+                         materialDesign:HintAssist.Hint="Search"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
             </StackPanel>
         </Border>

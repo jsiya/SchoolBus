@@ -11,14 +11,21 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="Transparent">
-    <Border Background="{DynamicResource PrimaryHueLightBrush}"
+    <Border Background="{DynamicResource PrimaryHueMidForegroundBrush}"
             CornerRadius="20">
-        <Grid Margin="5">
+        <Grid Margin="5"
+              >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="\StaticFiles\Images\vecteezy_cute-yellow-school-bus-car-flat-design-cartoon-for-shirt_8480856.png"
+                    Stretch="UniformToFill"
+                    />
+            </Grid.Background>
             <!--Header-->
             <TextBlock Text="School Bus"
                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"

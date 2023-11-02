@@ -13,6 +13,9 @@
     <Compile Update="Views\Pages\ClassesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\CreateRideView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\DriversView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\ClassesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\CreateRideView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\DriversView.xaml">

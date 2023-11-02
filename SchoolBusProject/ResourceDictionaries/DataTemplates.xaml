@@ -41,5 +41,9 @@
     <DataTemplate DataType="{x:Type viewModels:RidesViewModel}">
         <pageViews:RidesView/>
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:CreateRideViewModel}">
+        <pageViews:CreateRideView/>
+    </DataTemplate>
     
 </ResourceDictionary>

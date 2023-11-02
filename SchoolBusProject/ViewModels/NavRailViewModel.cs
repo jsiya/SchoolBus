@@ -3,7 +3,6 @@ using GalaSoft.MvvmLight.CommandWpf;
 using SchoolBusModels.Concretes;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -29,6 +28,7 @@ public class NavRailViewModel : ViewModelBase, INotifyPropertyChanged
 
     public Admin CurrentAdmin { get; set; }
     public ICommand? RideCommand { get; set; }
+    public ICommand? RidesCommand { get; set; }
     public ICommand? ClassCommand { get; set; }
     public ICommand? CarCommand { get; set; }
     public ICommand? DriverCommand { get; set; }
@@ -41,7 +41,8 @@ public class NavRailViewModel : ViewModelBase, INotifyPropertyChanged
         ViewFrame = frame;
         CurrentAdmin = admin;
         CurrentView = new RidesViewModel();
-        RideCommand = new RelayCommand(NavigateToRidesPage, true);
+        RideCommand = new RelayCommand(NavigateToRidePage, true);
+        RidesCommand = new RelayCommand(NavigateToRidesPage, true);
         ClassCommand = new RelayCommand(NavigateToClassPage, true);
         CarCommand = new RelayCommand(NavigateToCarsPage, true);
         DriverCommand = new RelayCommand(NavigateToDriversPage, true);
@@ -54,6 +55,10 @@ public class NavRailViewModel : ViewModelBase, INotifyPropertyChanged
     private void NavigateToRidesPage()
     {
         InnerFrame.Content = new RidesViewModel();
+    }
+    private void NavigateToRidePage()
+    {
+        InnerFrame.Content = new CreateRideViewModel();
     }
     private void NavigateToClassPage()
     {
