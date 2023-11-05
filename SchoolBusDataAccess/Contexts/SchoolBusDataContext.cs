@@ -4,12 +4,12 @@ using SchoolBusModels.Concretes;
 
 namespace SchoolBusDataAccess.Contexts;
 
-public class SchoolBusDataContext : DbContext
+internal class SchoolBusDataContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=DESKTOP-UCO0K2D;Initial Catalog=SchoolBus;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         optionsBuilder.UseLazyLoadingProxies();
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-UCO0K2D;Initial Catalog=SchoolBus;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         base.OnConfiguring(optionsBuilder);
     }
 
@@ -25,13 +25,13 @@ public class SchoolBusDataContext : DbContext
         base.OnModelCreating(modelBuilder);
     }
 
-    public DbSet<Car>? Cars { get; set; }
-    public DbSet<Driver>? Drivers { get; set; }
-    public DbSet<Class_>? Classes { get; set; }
-    public DbSet<Parent>? Parents { get; set; }
-    public DbSet<Ride>? Rides { get; set; }
-    public DbSet<Student>? Students { get; set; }
-    public DbSet<Admin>? Admins { get; set; }
-    public DbSet<Holiday>? Holidays { get; set; }
+    public virtual DbSet<Car>? Cars { get; set; }
+    public virtual DbSet<Driver>? Drivers { get; set; }
+    public virtual DbSet<Class_>? Classes { get; set; }
+    public virtual DbSet<Parent>? Parents { get; set; }
+    public virtual DbSet<Ride>? Rides { get; set; }
+    public virtual DbSet<Student>? Students { get; set; }
+    public virtual DbSet<Admin>? Admins { get; set; }
+    public virtual DbSet<Holiday>? Holidays { get; set; }
 }
 

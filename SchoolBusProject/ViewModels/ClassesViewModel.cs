@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
@@ -26,6 +27,7 @@ class ClassesViewModel : ViewModelBase, INotifyPropertyChanged
 
 
         Classes = new ObservableCollection<Class_>(ClassRepo?.GetAll());
+        var a = Classes.First().Students;
     }
 
     private void OpenCreateNewCarWindows()
