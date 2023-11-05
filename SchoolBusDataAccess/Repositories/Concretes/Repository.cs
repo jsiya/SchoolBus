@@ -14,7 +14,8 @@ public class Repository<T> : IRepository<T> where T : BaseEntity, new()
     public Repository()
     {
         _context = new SchoolBusDataContext();
-        _dbSet = _context.Set<T>();
+        //_ = _context?.Classes.FirstOrDefault().Students;
+        _dbSet = _context?.Set<T>();
     }
 
     public string Add(T entity)
@@ -47,7 +48,7 @@ public class Repository<T> : IRepository<T> where T : BaseEntity, new()
 
     public ICollection<T>? GetAll()
     {
-        return _dbSet.ToList();
+        return _dbSet.ToList<T>();
     }
 
     public T? GetById(int id)

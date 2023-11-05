@@ -1,6 +1,10 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using SchoolBusDataAccess.Repositories.Abstracts;
+using SchoolBusDataAccess.Repositories.Concretes;
+using SchoolBusModels.Concretes;
 using SchoolBusProject.Views.Windows;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
@@ -10,10 +14,14 @@ namespace SchoolBusProject.ViewModels;
 public class CarsViewModel : ViewModelBase, INotifyPropertyChanged
 {
     public ICommand? AddCar { get; set; }
+    public ObservableCollection<Car> Cars { get; set; }
+    public IRepository<Car> CarsRepo { get; set; }
 
     public CarsViewModel()
     {
         AddCar = new RelayCommand(OpenCreateCarWindow, true);
+        CarsRepo = new Repository<Car>();
+        Cars = new(CarsRepo.GetAll());
     }
 
     private void OpenCreateCarWindow()

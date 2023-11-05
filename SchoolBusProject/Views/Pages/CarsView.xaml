@@ -22,7 +22,7 @@
                 <Button Content="{materialDesign:PackIcon Kind=Plus}"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         ToolTip="Add Car"
-                        Margin="5 0"
+                        Margin="15 0"
                         Command="{Binding AddCar}"/>
                 <TextBox Grid.Row="1"
                          Name="UsernameTextBox"
@@ -34,12 +34,20 @@
         </Border>
         <DataGrid Grid.Row="1"
                   CanUserDeleteRows="True"
-                  Margin="5">
+                  AutoGenerateColumns="False"
+                  Margin="5"
+                  VerticalContentAlignment="Center"
+                  ItemsSource="{Binding Cars}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Driver Fullname" Width="150" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Name" Width="150" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="Number" Width="150" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Seat Count" Width="150" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Id" Width="150" 
+                                    Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Width="150" 
+                                    Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Number" Width="150" 
+                                    Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="Seat Count" Width="150" 
+                                    Binding="{Binding SeatCount}"/>
+                <DataGridComboBoxColumn Header="Rides" ItemsSource="{Binding Rides}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

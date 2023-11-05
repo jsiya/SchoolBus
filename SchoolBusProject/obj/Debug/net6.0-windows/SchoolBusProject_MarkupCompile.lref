@@ -3,6 +3,7 @@ FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\App.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\ResourceDictionaries\DataTemplates.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\CarsView.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\ClassesView.xaml;;
+FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\CreateRideView.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\DriversView.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\HolidaysView.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\LoginView.xaml;;
@@ -17,5 +18,4 @@ FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Windows\Crea
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Windows\CreateParentWindow.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Windows\CreateStudentWindow.xaml;;
 FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Windows\MainWindow.xaml;;
-FC:\Users\Siya\source\repos\SchoolBusProject\SchoolBusProject\Views\Pages\CreateRideView.xaml;;
 
