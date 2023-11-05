@@ -1,6 +1,10 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using SchoolBusDataAccess.Repositories.Abstracts;
+using SchoolBusDataAccess.Repositories.Concretes;
+using SchoolBusModels.Concretes;
 using SchoolBusProject.Views.Windows;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace SchoolBusProject.ViewModels;
@@ -8,10 +12,16 @@ namespace SchoolBusProject.ViewModels;
 class ParentsViewModel: ViewModelBase
 {
     public ICommand? AddParent { get; set; }
+    public ObservableCollection<Parent> Parents { get; set; }
+    public IRepository<Parent> ParentsRepo { get; set; }
 
     public ParentsViewModel()
     {
         AddParent = new RelayCommand(OpenCreateNewParentWindow, true);
+        ParentsRepo = new Repository<Parent>();
+        
+
+        Parents = new ObservableCollection<Parent>(ParentsRepo?.GetAll());
     }
 
     private void OpenCreateNewParentWindow()

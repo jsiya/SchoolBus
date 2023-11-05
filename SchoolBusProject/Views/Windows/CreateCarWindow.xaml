@@ -37,7 +37,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="New Class"
+                <TextBlock Text="New Car"
                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                            FontSize="35"
                            FontWeight="DemiBold"
@@ -48,11 +48,13 @@
                      Margin="50 5"
                      materialDesign:HintAssist.Hint="Name"
                      Height="40"
+                         Text="{Binding NewCar.Name}"
                      VerticalContentAlignment="Center"
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
                 <TextBox x:Name="NumberTextBox" 
                          Grid.Row="2"
+                         Text="{Binding NewCar.Number, Mode=TwoWay}"
                      Margin="50 5"
                      materialDesign:HintAssist.Hint="Number"
                      Height="40"
@@ -61,6 +63,7 @@
                      />
                 <TextBox x:Name="SeatCountTextBox" 
                          Grid.Row="3"
+                         Text="{Binding NewCar.SeatCount, Mode=TwoWay}"
                      Margin="50 5"
                      materialDesign:HintAssist.Hint="Seat Count"
                      Height="40"
@@ -69,6 +72,7 @@
                      />
                 <Button Grid.Row="4"
                         Content="Create"
+                        Command="{Binding AddCar, Mode=TwoWay}"
                         Width="100"/>
             </Grid>
         </Grid>

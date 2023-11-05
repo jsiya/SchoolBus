@@ -22,7 +22,7 @@
                 <Button Content="{materialDesign:PackIcon Kind=Plus}"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
                         ToolTip="Add Parent"
-                        Margin="5 0"
+                        Margin="15 0"
                         Command="{Binding AddParent}"/>
                 <TextBox Grid.Row="1"
                          Name="UsernameTextBox"
@@ -34,13 +34,17 @@
         </Border>
         <DataGrid Grid.Row="1"
                   Margin="5"
+                  ItemsSource="{Binding Parents}"
+                  AutoGenerateColumns="False"
                   CanUserDeleteRows="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="120" />
-                <DataGridTextColumn Header="Firstname" Width="120" />
-                <DataGridTextColumn Header="Lastname" Width="120" />
-                <DataGridTextColumn Header="Username" Width="120" />
-                <DataGridTextColumn Header="Phone" Width="120"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Firstname" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Lastname" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Password}"/>
+                <DataGridComboBoxColumn Header="Students" ItemsSource="{Binding Students}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -52,12 +56,23 @@
                                 <Button Grid.Column="0"
                                         Name="DeleteButton"
                                         Margin="2"
-                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Height="25"
+                                        Width="25"
+                                        Padding="-3"
+                                        Background="#97a97c"
+                                        BorderBrush="#97a97c"
+                                        Content="{materialDesign:PackIcon Kind=Edit}"
                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                                 <Button Grid.Column="1"
                                         Name="UpdateButton"
                                         Margin="2"
-                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Height="25"
+                                        Width="25"
+                                        Padding="-3"
+                                        
+                                        Background="#C66263"
+                                        BorderBrush="#C66263"
+                                        Content="{materialDesign:PackIcon Kind=Delete}"
                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                             </Grid>
                         </DataTemplate>

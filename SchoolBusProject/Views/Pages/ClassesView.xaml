@@ -58,12 +58,23 @@
                                 <Button Grid.Column="0"
                                         Name="DeleteButton"
                                         Margin="2"
-                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Height="25"
+                                        Width="25"
+                                        Padding="-3"
+                                        Background="#97a97c"
+                                        BorderBrush="#97a97c"
+                                        Content="{materialDesign:PackIcon Kind=Edit}"
                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                                 <Button Grid.Column="1"
                                         Name="UpdateButton"
                                         Margin="2"
-                                        Content="{materialDesign:PackIcon Kind=Plus}"
+                                        Height="25"
+                                        Width="25"
+                                        Padding="-3"
+                                        
+                                        Background="#C66263"
+                                        BorderBrush="#C66263"
+                                        Content="{materialDesign:PackIcon Kind=Delete}"
                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                             </Grid>
                         </DataTemplate>
