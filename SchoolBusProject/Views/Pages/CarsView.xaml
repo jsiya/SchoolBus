@@ -47,7 +47,18 @@
                                     Binding="{Binding Number}"/>
                 <DataGridTextColumn Header="Seat Count" Width="150" 
                                     Binding="{Binding SeatCount}"/>
-                <DataGridComboBoxColumn Header="Rides" ItemsSource="{Binding Rides}"/>
+                <DataGridTemplateColumn Header="Rides">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Grid.Column="0"
+                                      DisplayMemberPath="StartTime"
+                                      SelectedValuePath="Id"
+                                      SelectedIndex="0"
+                                      ItemsSource="{Binding Rides}"
+                                     />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

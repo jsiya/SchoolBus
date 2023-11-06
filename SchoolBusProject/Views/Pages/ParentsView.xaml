@@ -44,7 +44,18 @@
                 <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
                 <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
                 <DataGridTextColumn Header="Username" Binding="{Binding Password}"/>
-                <DataGridComboBoxColumn Header="Students" ItemsSource="{Binding Students}"/>
+                <DataGridTemplateColumn Header="Students">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Grid.Column="0"
+                                          DisplayMemberPath="FirstName"
+                                          SelectedValuePath="Id"
+                                          SelectedIndex="0"
+                                        Width="120"
+                                        ItemsSource="{Binding Students}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

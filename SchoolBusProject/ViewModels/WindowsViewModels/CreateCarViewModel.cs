@@ -16,6 +16,31 @@ namespace SchoolBusProject.ViewModels.WindowsViewModels;
 class CreateCarViewModel : ViewModelBase, INotifyPropertyChanged
 {
     public ICommand? AddCar { get; set; }
+
+    private string _name;
+
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; OnPropertyChanged(); }
+    }
+
+    private string _number;
+
+    public string Number
+    {
+        get { return _number; }
+        set { _number = value; OnPropertyChanged(); }
+    }
+
+    private int _seatCount;
+
+    public int SeatCount
+    {
+        get { return _seatCount; }
+        set { _seatCount = value; OnPropertyChanged(); }
+    }
+
     private Car _car;
 
     public Car NewCar
@@ -29,19 +54,19 @@ class CreateCarViewModel : ViewModelBase, INotifyPropertyChanged
 
     public CreateCarViewModel()
     {
-        NewCar = new();
         AddCar = new RelayCommand(AddNewCar, Check);
     }
 
     private void AddNewCar()
     {
         Repository<Car> carRepository = new Repository<Car>();
-        carRepository.Add(_car);
+        NewCar = new() { Name = Name, Number = Number, SeatCount = SeatCount, Rides = new List<Ride>() };
+        carRepository.Add(NewCar);
     }
 
     private bool Check()
     {
-        if (!string.IsNullOrEmpty(_car.Name) && !string.IsNullOrEmpty(_car.Number) && _car.SeatCount > 0)
+        if (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Number) && SeatCount > 0)
         {
             return true;
         }

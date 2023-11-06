@@ -14,7 +14,6 @@ public class Repository<T> : IRepository<T> where T : BaseEntity, new()
     public Repository()
     {
         _context = new SchoolBusDataContext();
-        _ = _context?.Classes.FirstOrDefault().Students;
         _dbSet = _context?.Set<T>();
     }
 

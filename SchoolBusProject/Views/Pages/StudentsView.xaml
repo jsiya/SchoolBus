@@ -44,8 +44,30 @@
                 <DataGridTextColumn Header="Address 1" Binding="{Binding Address1}"/>
                 <DataGridTextColumn Header="Address 2" Binding="{Binding Address2}"/>
                 <DataGridTextColumn Header="Class Id" Binding="{Binding ClassId}"/>
-                <DataGridComboBoxColumn Header="Parents" ItemsSource="{Binding Parents}"/>
-                <DataGridComboBoxColumn Header="Rides" ItemsSource="{Binding Rides}"/>
+                <DataGridTemplateColumn Header="Parents">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Grid.Column="0"
+                                          DisplayMemberPath="FirstName"
+                                          SelectedValuePath="Id"
+                                          SelectedIndex="0"
+                                        Width="120"
+                                        ItemsSource="{Binding Parents}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Rides">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Grid.Column="0"
+                                      DisplayMemberPath="StartTime"
+                                      SelectedValuePath="Id"
+                                      SelectedIndex="0"
+                                      ItemsSource="{Binding Rides}"
+                                     />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

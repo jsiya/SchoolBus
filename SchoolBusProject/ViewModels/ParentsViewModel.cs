@@ -14,14 +14,17 @@ class ParentsViewModel: ViewModelBase
     public ICommand? AddParent { get; set; }
     public ObservableCollection<Parent> Parents { get; set; }
     public IRepository<Parent> ParentsRepo { get; set; }
+    public ObservableCollection<Student> Students { get; set; }
+    public IRepository<Student> StudentRepo { get; set; }
 
     public ParentsViewModel()
     {
         AddParent = new RelayCommand(OpenCreateNewParentWindow, true);
         ParentsRepo = new Repository<Parent>();
-        
-
         Parents = new ObservableCollection<Parent>(ParentsRepo?.GetAll());
+
+        StudentRepo = new Repository<Student>();
+        Students = new ObservableCollection<Student>(StudentRepo?.GetAll());
     }
 
     private void OpenCreateNewParentWindow()

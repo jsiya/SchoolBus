@@ -13,15 +13,17 @@ class DriversViewModel: ViewModelBase
 {
     public ICommand? AddDriver { get; set; }
     public ObservableCollection<Driver> Drivers { get; set; }
+    public ObservableCollection<Ride> Rides { get; set; }
+    public IRepository<Ride> RideRepo { get; set; }
     public IRepository<Driver> DriverRepo { get; set; }
 
     public DriversViewModel()
     {
         AddDriver = new RelayCommand(OpenCreateNewDriverWindow, true);
         DriverRepo = new Repository<Driver>();
-
-
         Drivers = new ObservableCollection<Driver>(DriverRepo?.GetAll());
+        RideRepo = new Repository<Ride>();
+        Rides = new(RideRepo.GetAll());
     }
 
     private void OpenCreateNewDriverWindow()

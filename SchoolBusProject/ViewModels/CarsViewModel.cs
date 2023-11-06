@@ -15,12 +15,16 @@ public class CarsViewModel : ViewModelBase, INotifyPropertyChanged
 {
     public ICommand? AddCar { get; set; }
     public ObservableCollection<Car> Cars { get; set; }
+    public ObservableCollection<Ride> Rides { get; set; }
     public IRepository<Car> CarsRepo { get; set; }
+    public IRepository<Ride> RideRepo { get; set; }
 
     public CarsViewModel()
     {
         AddCar = new RelayCommand(OpenCreateCarWindow, true);
         CarsRepo = new Repository<Car>();
+        RideRepo = new Repository<Ride>();
+        Rides = new(RideRepo.GetAll());
         Cars = new(CarsRepo.GetAll());
     }
 

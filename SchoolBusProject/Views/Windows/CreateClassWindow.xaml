@@ -48,10 +48,12 @@
                      Height="40"
                      VerticalContentAlignment="Center"
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                         Text="{Binding Classname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      />
                 <Button Grid.Row="2"
                         Content="Create"
-                        Width="100"/>
+                        Width="100"
+                        Command="{Binding CreateClass}"/>
             </Grid>
         </Grid>
     </Border>

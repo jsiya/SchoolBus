@@ -36,7 +36,7 @@
                   Margin="5"
                   CanUserDeleteRows="False"
                   AutoGenerateColumns="False"
-                  ItemsSource="{Binding Classes}">
+                  ItemsSource="{Binding Classes, UpdateSourceTrigger=PropertyChanged}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" 
                                     Width="120"
@@ -44,9 +44,19 @@
                 <DataGridTextColumn Header="Class" 
                                     Width="120"
                                     Binding="{Binding Name}"/>
-                <DataGridComboBoxColumn Header="Students"
+                <DataGridTemplateColumn Header="Students">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox Grid.Column="0"
+                                          DisplayMemberPath="FirstName"
+                                          SelectedValuePath="Id"
+                                          SelectedIndex="0"
                                         Width="120"
                                         ItemsSource="{Binding Students}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
