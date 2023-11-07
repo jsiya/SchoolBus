@@ -6,6 +6,7 @@ using SchoolBusModels.Concretes;
 using SchoolBusProject.ViewModels.WindowsViewModels;
 using SchoolBusProject.Views.Windows;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net;
@@ -147,6 +148,7 @@ class StudentsViewModel : ViewModelBase, INotifyPropertyChanged
             Student student = new();
             student.FirstName = FirstName;
             student.LastName = LastName;
+            student.Parents = new List<Parent>();
             student.Parents.Add(ParentsRepo?.GetById(pId));
             student.Address1 = Address1;
             student.Address2 = Address2;

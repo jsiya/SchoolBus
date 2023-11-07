@@ -12,7 +12,8 @@
     <Grid Background="Transparent">
         <DataGrid Grid.Row="1"
                   CanUserDeleteRows="True"
-                  ItemsSource="{Binding Rides}"
+                  ItemsSource="{Binding Rides, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"                
+                  SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                   AutoGenerateColumns="False"
                   VerticalContentAlignment="Center"
                       Margin="5">
@@ -27,7 +28,7 @@
                         <DataTemplate>
                             <ToggleButton materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=Home}"
                                     Content="{materialDesign:PackIcon Kind=GraduationCap}"
-                                    Style="{StaticResource MaterialDesignActionToggleButton}" IsChecked="{Binding Rotate}" />
+                                    Style="{StaticResource MaterialDesignActionToggleButton}" IsChecked="{Binding Rotate}" IsEnabled="False" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -55,6 +56,7 @@
                                     Background="#C66263"
                                     BorderBrush="#C66263"
                                     Content="{materialDesign:PackIcon Kind=Delete}"
+                                    Command="{Binding Path=DataContext.DeleteRide, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                     Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
