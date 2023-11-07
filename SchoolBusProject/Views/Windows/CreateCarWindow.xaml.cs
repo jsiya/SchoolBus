@@ -7,7 +7,6 @@ public partial class CreateCarWindow : Window
     public CreateCarWindow()
     {
         InitializeComponent();
-        DataContext = new CreateCarViewModel();
     }
     private void CloseBtn_Click(object sender, RoutedEventArgs e)
     {

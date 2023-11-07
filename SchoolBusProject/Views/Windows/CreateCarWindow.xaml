@@ -48,13 +48,13 @@
                      Margin="50 5"
                      materialDesign:HintAssist.Hint="Name"
                      Height="40"
-                         Text="{Binding Name, Mode=TwoWay}"
+                         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      VerticalContentAlignment="Center"
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
                 <TextBox x:Name="NumberTextBox" 
                          Grid.Row="2"
-                         Text="{Binding Number, Mode=TwoWay}"
+                         Text="{Binding Number, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      Margin="50 5"
                      materialDesign:HintAssist.Hint="Number"
                      Height="40"
@@ -63,7 +63,7 @@
                      />
                 <TextBox x:Name="SeatCountTextBox" 
                          Grid.Row="3"
-                         Text="{Binding SeatCount, Mode=TwoWay}"
+                         Text="{Binding SeatCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      Margin="50 5"
                      materialDesign:HintAssist.Hint="Seat Count"
                      Height="40"
@@ -72,7 +72,7 @@
                      />
                 <Button Grid.Row="4"
                         Content="Create"
-                        Command="{Binding AddCar, Mode=TwoWay}"
+                        Command="{Binding CreateCar, Mode=TwoWay}"
                         Width="100"/>
             </Grid>
         </Grid>
