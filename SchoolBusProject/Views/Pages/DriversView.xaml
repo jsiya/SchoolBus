@@ -34,21 +34,21 @@
         </Border>
         <DataGrid Grid.Row="1"
                   Margin="5"
-                  ItemsSource="{Binding Drivers}"
+                  ItemsSource="{Binding Drivers, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                   AutoGenerateColumns="False"
                   CanUserDeleteRows="True"
                   VerticalContentAlignment="Center"
                   IsTextSearchEnabled="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Firstname" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="Lastname" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
-                <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
-                <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
-                <DataGridTextColumn Header="Car" Binding="{Binding Car}"/>
-                <DataGridTextColumn Header="Lisense" Binding="{Binding License}"/>
-                <DataGridTemplateColumn Header="Rides">
+                <DataGridTextColumn Header="Id" Binding="{Binding Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Firstname" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Lastname" Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Lisense" Binding="{Binding License, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTemplateColumn Header="Rides" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox Grid.Column="0"
@@ -63,28 +63,27 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Grid Width="100" Height="30">
+                            <Grid Width="80" Height="30">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Column="0"
-                                        Name="DeleteButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
                                         Padding="-3"
                                         Background="#97a97c"
                                         BorderBrush="#97a97c"
+                                        Command="{Binding Path=DataContext.UpdateDriver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                         Content="{materialDesign:PackIcon Kind=Edit}"
                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                                 <Button Grid.Column="1"
-                                        Name="UpdateButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
                                         Padding="-3"
-                                        
+                                        Command="{Binding Path=DataContext.DeleteDriver, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                         Background="#C66263"
                                         BorderBrush="#C66263"
                                         Content="{materialDesign:PackIcon Kind=Delete}"

@@ -42,10 +42,12 @@
                      materialDesign:HintAssist.Hint="FirstName"
                      Height="40"
                      VerticalContentAlignment="Center"
+                     Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
                 <TextBox x:Name="LastnameTextBox" 
                      Margin="50 5"
+                     Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      materialDesign:HintAssist.Hint="Lastname"
                      Height="40"
                      VerticalContentAlignment="Center"
@@ -53,17 +55,22 @@
                      />
                 <TextBox x:Name="ParentTextBox" 
                      Margin="50 5"
-                     materialDesign:HintAssist.Hint="Parent"
+                     materialDesign:HintAssist.Hint="Parent Id"
                      Height="40"
                      VerticalContentAlignment="Center"
+                     Text="{Binding ParentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
-                <ComboBox Margin="50 20"/>
+                <ComboBox Margin="50 20" 
+                          DisplayMemberPath="Name"
+                          ItemsSource="{Binding CLasses, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedClass, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
                 <TextBox x:Name="HomeAddress1TextBox" 
                      Margin="50 5"
                      materialDesign:HintAssist.Hint="Home Address 1"
                      Height="40"
                      VerticalContentAlignment="Center"
+                     Text="{Binding Address1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
                 <TextBox x:Name="HomeAddress2TextBox" 
@@ -71,11 +78,13 @@
                      materialDesign:HintAssist.Hint="Home Address 2"
                      Height="40"
                      VerticalContentAlignment="Center"
+                     Text="{Binding Address2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
                      />
                 <Button Content="Create"
                         Width="100"
-                        Margin="20"/>
+                        Margin="20"
+                        Command="{Binding CreateStudent}"/>
             </StackPanel>
         </Grid>
     </Border>

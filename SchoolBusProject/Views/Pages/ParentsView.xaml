@@ -34,16 +34,17 @@
         </Border>
         <DataGrid Grid.Row="1"
                   Margin="5"
-                  ItemsSource="{Binding Parents}"
+                  ItemsSource="{Binding Parents, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                   AutoGenerateColumns="False"
                   CanUserDeleteRows="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Firstname" Binding="{Binding FirstName}" />
-                <DataGridTextColumn Header="Lastname" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
-                <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
-                <DataGridTextColumn Header="Username" Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Firstname" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                <DataGridTextColumn Header="Lastname" Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                 <DataGridTemplateColumn Header="Students">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -65,7 +66,6 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Column="0"
-                                        Name="DeleteButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
@@ -73,14 +73,15 @@
                                         Background="#97a97c"
                                         BorderBrush="#97a97c"
                                         Content="{materialDesign:PackIcon Kind=Edit}"
-                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                        Command="{Binding Path=DataContext.UpdateParent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"/>
                                 <Button Grid.Column="1"
                                         Name="UpdateButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
                                         Padding="-3"
-                                        
+                                        Command="{Binding Path=DataContext.DeleteParent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                         Background="#C66263"
                                         BorderBrush="#C66263"
                                         Content="{materialDesign:PackIcon Kind=Delete}"

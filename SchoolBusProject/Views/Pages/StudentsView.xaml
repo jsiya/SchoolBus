@@ -35,16 +35,17 @@
         <DataGrid Grid.Row="1"
                   Margin="5"
                   AutoGenerateColumns="False"
-                  ItemsSource="{Binding Students}"
+                  ItemsSource="{Binding Students, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                   CanUserDeleteRows="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Firstname" Binding="{Binding FirstName}" />
-                <DataGridTextColumn Header="Lastname" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Address 1" Binding="{Binding Address1}"/>
-                <DataGridTextColumn Header="Address 2" Binding="{Binding Address2}"/>
-                <DataGridTextColumn Header="Class Id" Binding="{Binding ClassId}"/>
-                <DataGridTemplateColumn Header="Parents">
+                <DataGridTextColumn Header="Firstname" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                <DataGridTextColumn Header="Lastname" Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Address 1" Binding="{Binding Address1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Address 2" Binding="{Binding Address2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Class Id" Binding="{Binding ClassId, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <DataGridTemplateColumn Header="Parents" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox Grid.Column="0"
@@ -56,7 +57,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Rides">
+                <DataGridTemplateColumn Header="Rides" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox Grid.Column="0"
@@ -77,22 +78,21 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Column="0"
-                                        Name="DeleteButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
                                         Padding="-3"
                                         Background="#97a97c"
                                         BorderBrush="#97a97c"
+                                        Command="{Binding Path=DataContext.UpdateStudent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                         Content="{materialDesign:PackIcon Kind=Edit}"
                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                                 <Button Grid.Column="1"
-                                        Name="UpdateButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
                                         Padding="-3"
-                                        
+                                        Command="{Binding Path=DataContext.DeleteStudent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                         Background="#C66263"
                                         BorderBrush="#C66263"
                                         Content="{materialDesign:PackIcon Kind=Delete}"
