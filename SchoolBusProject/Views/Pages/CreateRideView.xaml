@@ -137,6 +137,8 @@
             <DataGrid Grid.Row="1"
                   CanUserDeleteRows="True"
                       Margin="5"
+                      ItemsSource="{Binding Students, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                       >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Firstname" Width="120"/>
@@ -169,6 +171,7 @@
             </DataGrid>
             <DataGrid Grid.Row="2"
                   CanUserDeleteRows="True"
+                      ItemsSource="{Binding SelectedStudents, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       Margin="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Firstname" Width="120"/>
