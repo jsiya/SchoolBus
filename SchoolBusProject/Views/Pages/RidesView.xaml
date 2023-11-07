@@ -18,10 +18,10 @@
                       Margin="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Car" Binding="{Binding Car}"/>
-                <DataGridTextColumn Header="Driver" Binding="{Binding Driver}"/>
-                <DataGridTextColumn Header="Start Date" Binding="{Binding StartTime}" Width="80"/>
-                <DataGridTextColumn Header="End Date" Binding="{Binding EndTime}" Width="80"/>
+                <DataGridTextColumn Header="Car" Binding="{Binding Car.Name}"/>
+                <DataGridTextColumn Header="Driver" Binding="{Binding Driver.FirstName}"/>
+                <DataGridTextColumn Header="Start Date" Binding="{Binding StartTime}" Width="120"/>
+                <DataGridTextColumn Header="End Date" Binding="{Binding EndTime}" Width="120"/>
                 <DataGridTemplateColumn Header="Rotate">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -46,33 +46,16 @@
                 <DataGridTemplateColumn >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Grid Width="100" Height="30">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Button Grid.Column="0"
-                                        Name="DeleteButton"
-                                        Margin="2"
-                                        Height="25"
-                                        Width="25"
-                                        Padding="-3"
-                                        Background="#97a97c"
-                                        BorderBrush="#97a97c"
-                                        Content="{materialDesign:PackIcon Kind=Edit}"
-                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
-                                <Button Grid.Column="1"
-                                        Name="UpdateButton"
-                                        Margin="2"
-                                        Height="25"
-                                        Width="25"
-                                        Padding="-3"
-                                        
-                                        Background="#C66263"
-                                        BorderBrush="#C66263"
-                                        Content="{materialDesign:PackIcon Kind=Delete}"
-                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
-                            </Grid>
+                            <Button
+                                    Name="DeleteButton"
+                                    Margin="2"
+                                    Height="25"
+                                    Width="25"
+                                    Padding="-3"                                        
+                                    Background="#C66263"
+                                    BorderBrush="#C66263"
+                                    Content="{materialDesign:PackIcon Kind=Delete}"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

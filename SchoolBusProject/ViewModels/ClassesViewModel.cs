@@ -4,11 +4,9 @@ using SchoolBusDataAccess.Repositories.Abstracts;
 using SchoolBusDataAccess.Repositories.Concretes;
 using SchoolBusModels.Concretes;
 using SchoolBusProject.Views.Windows;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
@@ -17,7 +15,18 @@ namespace SchoolBusProject.ViewModels;
 
 class ClassesViewModel : ViewModelBase, INotifyPropertyChanged
 {
+    private Class_ _selectedItem;
+
+    public Class_ SelectedItem
+    {
+        get { return _selectedItem; }
+        set { _selectedItem = value; OnPropertyChanged(); }
+    }
+
+    public CreateClassWindow CreateWindow { get; set; }
     public ICommand? AddClass { get; set; }
+    public ICommand? DeleteClass { get; set; }
+    public ICommand? UpdateClassCommand { get; set; }
     public ObservableCollection<Class_> Classes { get; set; }
     public ObservableCollection<Student> Students { get; set; }
     public IRepository<Student> StudentRepo { get; set; }
@@ -42,16 +51,52 @@ class ClassesViewModel : ViewModelBase, INotifyPropertyChanged
         Classes = new ObservableCollection<Class_>(ClassRepo?.GetAll());
         Students = new ObservableCollection<Student>(StudentRepo?.GetAll());
 
+        
         //create class
 
         CreateClass = new RelayCommand(CreateClassMethod, Check);
+        DeleteClass = new RelayCommand(DeleteCarMethod);
+        UpdateClassCommand = new RelayCommand(UpdateMethod);
+    }
+
+    private void UpdateMethod()
+    {
+        if(SelectedItem != null)
+        {
+            try
+            {
+                ClassRepo.Update(SelectedItem);
+                ClassRepo.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+    }
+    private void DeleteCarMethod()
+    {
+        if (SelectedItem != null)
+        {
+            try
+            {
+                ClassRepo.Remove(SelectedItem);
+                ClassRepo.SaveChanges();
+                Classes.Remove(SelectedItem);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }       
     }
 
     private void OpenCreateNewCarWindows()
     {
-        CreateClassWindow createClassWindow = new CreateClassWindow();
-        createClassWindow.DataContext = this;
-        createClassWindow.Show();
+        CreateWindow= new CreateClassWindow();
+        CreateWindow.DataContext = this;
+        CreateWindow.Show();
     }
 
     private bool Check()
@@ -67,7 +112,7 @@ class ClassesViewModel : ViewModelBase, INotifyPropertyChanged
         var str = ClassRepo.Add(clas);
         MessageBox.Show(str);
         if(str == "Succesfully added!") Classes.Add(clas);
-        ClassRepo.SaveChanges();
+        CreateWindow.Close();
     }
 
 

@@ -36,14 +36,16 @@
                   Margin="5"
                   CanUserDeleteRows="False"
                   AutoGenerateColumns="False"
-                  ItemsSource="{Binding Classes, UpdateSourceTrigger=PropertyChanged}">
+                  RowBackground="{DynamicResource PrimaryHueLightBrush}"
+                  SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                  ItemsSource="{Binding Classes, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" 
                                     Width="120"
-                                    Binding="{Binding Id}"/>
+                                    Binding="{Binding Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Class" 
                                     Width="120"
-                                    Binding="{Binding Name}"/>
+                                    Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTemplateColumn Header="Students">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -66,22 +68,23 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Column="0"
-                                        Name="DeleteButton"
+                                        Name="UpdateButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
                                         Padding="-3"
                                         Background="#97a97c"
                                         BorderBrush="#97a97c"
+                                        Command="{Binding Path=DataContext.UpdateClassCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                         Content="{materialDesign:PackIcon Kind=Edit}"
                                         Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
                                 <Button Grid.Column="1"
-                                        Name="UpdateButton"
+                                        Name="DeleteButton"
                                         Margin="2"
                                         Height="25"
                                         Width="25"
                                         Padding="-3"
-                                        
+                                        Command="{Binding Path=DataContext.DeleteClass, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
                                         Background="#C66263"
                                         BorderBrush="#C66263"
                                         Content="{materialDesign:PackIcon Kind=Delete}"

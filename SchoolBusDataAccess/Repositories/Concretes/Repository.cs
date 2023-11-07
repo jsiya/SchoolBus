@@ -19,10 +19,10 @@ public class Repository<T> : IRepository<T> where T : BaseEntity, new()
 
     public string Add(T entity)
     {
-        //if (entity == null) throw new ArgumentNullException($"{nameof(T)} is Null");
         try
         {
             _dbSet.Add(entity);
+            _context.SaveChanges();
         }
         catch (Exception ex)
         {
