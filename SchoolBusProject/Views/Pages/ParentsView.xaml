@@ -49,11 +49,11 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox Grid.Column="0"
-                                          DisplayMemberPath="FirstName"
+                                          DisplayMemberPath="Student.FirstName"
                                           SelectedValuePath="Id"
                                           SelectedIndex="0"
                                         Width="120"
-                                        ItemsSource="{Binding Students}"/>
+                                        ItemsSource="{Binding ParentStudents}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

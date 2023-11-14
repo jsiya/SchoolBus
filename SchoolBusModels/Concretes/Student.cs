@@ -13,6 +13,9 @@ public class Student : BaseEntity
 
     //Navigation Property
     public virtual Class_? Class { get; set; }
-    public virtual ICollection<Ride>? Rides { get; set; }
-    public virtual ICollection<Parent>? Parents { get; set; }
+    //public virtual ICollection<Ride>? Rides { get; set; } = new List<Ride>();
+    public virtual ICollection<StudentRide>? StudentRides { get; set; }
+
+    //public virtual ICollection<Parent>? Parents { get; set; } = new List<Parent>();
+    public virtual ICollection<ParentStudent>? ParentStudents { get; set; }
 }

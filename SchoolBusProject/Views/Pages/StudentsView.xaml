@@ -49,11 +49,11 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox Grid.Column="0"
-                                          DisplayMemberPath="FirstName"
+                                          DisplayMemberPath="Parent.FirstName"
                                           SelectedValuePath="Id"
                                           SelectedIndex="0"
                                         Width="120"
-                                        ItemsSource="{Binding Parents}"/>
+                                        ItemsSource="{Binding ParentStudents}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -61,10 +61,10 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <ComboBox Grid.Column="0"
-                                      DisplayMemberPath="StartTime"
+                                      DisplayMemberPath="Ride.StartTime"
                                       SelectedValuePath="Id"
                                       SelectedIndex="0"
-                                      ItemsSource="{Binding Rides}"
+                                      ItemsSource="{Binding StudentRides}"
                                      />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

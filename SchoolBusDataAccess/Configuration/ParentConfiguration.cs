@@ -23,8 +23,8 @@ public class ParentConfiguration : IEntityTypeConfiguration<Parent>
         builder.Property(p => p.Phone)
             .HasColumnType("nvarchar(13)");
 
-        builder.HasMany(p => p.Students)
-            .WithMany(s => s.Parents)
-            .UsingEntity("ParentStudent");
+        //builder.HasMany(p => p.Students)
+        //    .WithMany(s => s.Parents)
+        //    .UsingEntity("ParentStudent");
     }
 }

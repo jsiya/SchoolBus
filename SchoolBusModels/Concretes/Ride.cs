@@ -13,5 +13,7 @@ public class Ride : BaseEntity
     //Navigation Property
     public virtual Car Car { get; set; }
     public virtual Driver Driver { get; set; }
-    public virtual ICollection<Student>? Students { get; set; }
+    //public virtual ICollection<Student>? Students { get; set; } = new List<Student>();
+    public virtual ICollection<StudentRide>? StudentRides { get; set; } = new List<StudentRide>();
+
 }

@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -90,15 +91,14 @@ class StudentsViewModel : ViewModelBase, INotifyPropertyChanged
         Students = new ObservableCollection<Student>(StudentsRepo?.GetAll());
         ParentsRepo = new Repository<Parent>();
         Parents = new ObservableCollection<Parent>(ParentsRepo?.GetAll());
-        RideRepo = new Repository<Ride>();
-        Rides = new(RideRepo.GetAll());
+        //RideRepo = new Repository<Ride>();
+        //Rides = new(RideRepo.GetAll());
 
         CreateStudent = new RelayCommand(CreateMethod, true);
         UpdateStudent = new RelayCommand(UpdateMethod);
         DeleteStudent = new RelayCommand(DeleteMethod);
     }
 
-    //bax
     private bool Check()
     {
         if (string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName) || ParentId == null
@@ -142,27 +142,60 @@ class StudentsViewModel : ViewModelBase, INotifyPropertyChanged
 
     private void CreateMethod()
     {
+        //int pId;
+        //if(int.TryParse(ParentId.ToString(), out pId))
+        //{
+        //    Student student = new();
+        //    student.FirstName = FirstName;
+        //    student.LastName = LastName;
+        //    student.Parents = new List<Parent>
+        //    {
+        //        ParentsRepo?.GetById(pId)
+        //    };
+        //    student.Address1 = Address1;
+        //    student.Address2 = Address2;
+        //    student.ClassId = SelectedClass.Id;
+        //    var str = StudentsRepo.Add(student);
+        //    MessageBox.Show(str);
+        //    if (str == "Succesfully added!") Students.Add(student);
+        //    CreateWindow.Close();
+        //}
+        //else
+        //{
+        //    MessageBox.Show("Invalid Parent Id! Id must be an intager");
+        //}
         int pId;
-        if(int.TryParse(ParentId.ToString(), out pId))
+        if (int.TryParse(ParentId.ToString(), out pId))
         {
-            Student student = new();
-            student.FirstName = FirstName;
-            student.LastName = LastName;
-            student.Parents = new List<Parent>();
-            student.Parents.Add(ParentsRepo?.GetById(pId));
-            student.Address1 = Address1;
-            student.Address2 = Address2;
-            student.ClassId = SelectedClass.Id;
-            var str = StudentsRepo.Add(student);
-            MessageBox.Show(str);
-            if (str == "Succesfully added!") Students.Add(student);
-            CreateWindow.Close();
+            var existingParent = ParentsRepo?.GetById(pId);
+            if (existingParent != null)
+            {
+                Student student = new();
+                student.FirstName = FirstName;
+                student.LastName = LastName;
+                student.ParentStudents = new List<ParentStudent>();
+                student.ParentStudents.Add(new ParentStudent() { ParentId = pId });
+                student.Address1 = Address1;
+                student.Address2 = Address2;
+                student.ClassId = SelectedClass.Id;
+
+                var str = StudentsRepo.Add(student);
+                MessageBox.Show(str);
+
+                if (str == "Successfully added!")
+                    Students.Add(student);
+
+                CreateWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Parent with specified Id not found.");
+            }
         }
         else
         {
-            MessageBox.Show("Invalid Parent Id! Id must be an intager");
+            MessageBox.Show("Invalid Parent Id! Id must be an integer");
         }
-
     }
 
     private void OpenCreateNewStudentWindow()

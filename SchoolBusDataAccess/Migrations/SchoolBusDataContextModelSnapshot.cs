@@ -22,21 +22,6 @@ namespace SchoolBusDataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ParentStudent", b =>
-                {
-                    b.Property<int>("ParentsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ParentsId", "StudentsId");
-
-                    b.HasIndex("StudentsId");
-
-                    b.ToTable("ParentStudent");
-                });
-
             modelBuilder.Entity("SchoolBusModels.Concretes.Admin", b =>
                 {
                     b.Property<int>("Id")
@@ -196,6 +181,21 @@ namespace SchoolBusDataAccess.Migrations
                     b.ToTable("Parents");
                 });
 
+            modelBuilder.Entity("SchoolBusModels.Concretes.ParentStudent", b =>
+                {
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ParentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("StudentId", "ParentId");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("ParentStudent");
+                });
+
             modelBuilder.Entity("SchoolBusModels.Concretes.Ride", b =>
                 {
                     b.Property<int>("Id")
@@ -261,34 +261,38 @@ namespace SchoolBusDataAccess.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("StudentRide", b =>
+            modelBuilder.Entity("SchoolBusModels.Concretes.StudentRide", b =>
                 {
-                    b.Property<int>("RidesId")
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StudentsId")
+                    b.Property<int>("RideId")
                         .HasColumnType("int");
 
-                    b.HasKey("RidesId", "StudentsId");
+                    b.HasKey("StudentId", "RideId");
 
-                    b.HasIndex("StudentsId");
+                    b.HasIndex("RideId");
 
                     b.ToTable("StudentRide");
                 });
 
-            modelBuilder.Entity("ParentStudent", b =>
+            modelBuilder.Entity("SchoolBusModels.Concretes.ParentStudent", b =>
                 {
-                    b.HasOne("SchoolBusModels.Concretes.Parent", null)
-                        .WithMany()
-                        .HasForeignKey("ParentsId")
+                    b.HasOne("SchoolBusModels.Concretes.Parent", "Parent")
+                        .WithMany("ParentStudents")
+                        .HasForeignKey("ParentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolBusModels.Concretes.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentsId")
+                    b.HasOne("SchoolBusModels.Concretes.Student", "Student")
+                        .WithMany("ParentStudents")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Parent");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("SchoolBusModels.Concretes.Ride", b =>
@@ -319,19 +323,23 @@ namespace SchoolBusDataAccess.Migrations
                     b.Navigation("Class");
                 });
 
-            modelBuilder.Entity("StudentRide", b =>
+            modelBuilder.Entity("SchoolBusModels.Concretes.StudentRide", b =>
                 {
-                    b.HasOne("SchoolBusModels.Concretes.Ride", null)
-                        .WithMany()
-                        .HasForeignKey("RidesId")
+                    b.HasOne("SchoolBusModels.Concretes.Ride", "Ride")
+                        .WithMany("StudentRides")
+                        .HasForeignKey("RideId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolBusModels.Concretes.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentsId")
+                    b.HasOne("SchoolBusModels.Concretes.Student", "Student")
+                        .WithMany("StudentRides")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Ride");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("SchoolBusModels.Concretes.Car", b =>
@@ -347,6 +355,23 @@ namespace SchoolBusDataAccess.Migrations
             modelBuilder.Entity("SchoolBusModels.Concretes.Driver", b =>
                 {
                     b.Navigation("Rides");
+                });
+
+            modelBuilder.Entity("SchoolBusModels.Concretes.Parent", b =>
+                {
+                    b.Navigation("ParentStudents");
+                });
+
+            modelBuilder.Entity("SchoolBusModels.Concretes.Ride", b =>
+                {
+                    b.Navigation("StudentRides");
+                });
+
+            modelBuilder.Entity("SchoolBusModels.Concretes.Student", b =>
+                {
+                    b.Navigation("ParentStudents");
+
+                    b.Navigation("StudentRides");
                 });
 #pragma warning restore 612, 618
         }

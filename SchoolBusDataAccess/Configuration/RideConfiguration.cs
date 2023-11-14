@@ -19,8 +19,8 @@ internal class RideConfiguration : IEntityTypeConfiguration<Ride>
             .WithMany(c => c.Rides)
             .HasForeignKey(r => r.CarId);
 
-        builder.HasMany(r => r.Students)
-            .WithMany(s => s.Rides)
-            .UsingEntity("StudentRide");
+        //builder.HasMany(r => r.Students)
+        //    .WithMany(s => s.Rides)
+        //    .UsingEntity("StudentRide");
     }
 }
