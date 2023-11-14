@@ -26,30 +26,44 @@
                        Margin="10 5"
                        FontWeight="DemiBold"/>
 
-                <TextBox x:Name="FirstnameTextBox" 
-                     Margin="10 5"
-                     materialDesign:HintAssist.Hint="Firstname"
-                     Height="40"
-                     VerticalContentAlignment="Center"
-                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                <TextBlock x:Name="FirstnameTextBox" 
+                     Margin="10 20 10 5"
+                           FontSize="16"
+                     Text="Firstname:"
+                     VerticalAlignment="Bottom"
                      />
-
-                <TextBox x:Name="CarNameTextBox" 
-                     Margin="10 5"
-                     materialDesign:HintAssist.Hint="Car Name"
-                     Height="40"
-                     VerticalContentAlignment="Center"
-                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                <ComboBox  DisplayMemberPath="FirstName"
+                           SelectedValuePath="Id"
+                           ItemsSource="{Binding Drivers}"
+                           SelectedItem="{Binding SelectedDriver}"
+                           Margin="10 5"
+                          />
+                <TextBlock
+                     Margin="10 20 10 5"
+                           FontSize="16"
+                     Text="Car:"
+                     VerticalAlignment="Bottom"
                      />
-
-                <TextBox x:Name="CarNumberTextBox" 
-                     Margin="10 5"
-                     materialDesign:HintAssist.Hint="Car Number"
-                     Height="40"
-                     VerticalContentAlignment="Center"
-                     materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
-                     />
-
+                <ComboBox  DisplayMemberPath="Name"
+                           SelectedValuePath="Id"
+                           ItemsSource="{Binding Cars}"
+                           SelectedItem="{Binding SelectedCar}"
+                           Margin="10 5"
+                          />
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Home" FontSize="16" HorizontalAlignment="Center"/>
+                    <TextBlock Text="School" FontSize="16" Grid.Column="2" HorizontalAlignment="Center"/>
+                    <ToggleButton Grid.Column="1"
+                                  IsChecked="{Binding Ridee.Rotate}"
+                                  Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                                  Background="{DynamicResource SecondaryHueDarkForegroundBrush}"
+                                  />
+                </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -59,13 +73,13 @@
                        Margin="10 5"
                        Text="Students Attend : "
                        FontSize="15"
-                           FontWeight="DemiBold"
+                       FontWeight="DemiBold"
                        Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
                        />
                     <TextBlock
                        Grid.Column="1"
                         Margin="10 5"
-                       Text="5"
+                       Text="{Binding Count}"
                        FontSize="15"
                        />
                 </Grid>
@@ -85,7 +99,7 @@
                     <TextBlock
                        Grid.Column="1"
                         Margin="10 5"
-                       Text="8"
+                       Text="{Binding SelectedCar.SeatCount}"
                        FontSize="15"
                        />
                 </Grid>
@@ -105,9 +119,11 @@
                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
 
                     <DatePicker Grid.Column="1"
-                            Margin="10 5"/>
+                                SelectedDate="{Binding SelectedDate}"
+                                Margin="10 5"/>
 
                 </Grid>
+                
 
                 <Button Width="100"
                     Content="Create"
@@ -135,13 +151,14 @@
                      materialDesign:HintAssist.Hint="Search"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
             <DataGrid Grid.Row="1"
-                  CanUserDeleteRows="True"
+                      CanUserDeleteRows="True"
                       Margin="5"
                       AutoGenerateColumns="False"
                       ItemsSource="{Binding Students, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                       >
                 <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="50" Binding="{Binding Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     <DataGridTextColumn Header="Firstname" Width="120" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     <DataGridTextColumn Header="Lastname" Width="120"  Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     <DataGridTextColumn Header="Address" Width="120" Binding="{Binding Address1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
@@ -149,12 +166,13 @@
                     <DataGridTemplateColumn Header="Add" Width="80">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                
-                                    <Button Grid.Column="0"
+                                <Button Grid.Column="0"
                                         Name="DeleteButton"
                                         Margin="2"
                                         Content="{materialDesign:PackIcon Kind=Plus}"
-                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                            Command="{Binding Path=DataContext.AddStudent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                        />
                                    
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -162,17 +180,19 @@
                 </DataGrid.Columns>
             </DataGrid>
             <DataGrid Grid.Row="2"
-                  CanUserDeleteRows="True"
+                      CanUserDeleteRows="True"
                       Margin="5"
                       AutoGenerateColumns="False"
-                      ItemsSource="{Binding SelectedStudents, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="Student"
+                      ItemsSource="{Binding Ridee.StudentRides, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                       >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Firstname" Width="120" Binding="{Binding FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                    <DataGridTextColumn Header="Lastname" Width="120"  Binding="{Binding LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                    <DataGridTextColumn Header="Address" Width="120" Binding="{Binding Address1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-                    <DataGridTextColumn Header="Class" Width="90"  Binding="{Binding Class.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Id" Width="50" Binding="{Binding Student.Id, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Firstname" Width="100" Binding="{Binding Student.FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Lastname" Width="100"  Binding="{Binding Student.LastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Address" Width="100" Binding="{Binding Student.Address1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Class" Width="90"  Binding="{Binding Student.Class.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
                     <DataGridTemplateColumn Header="Remove" Width="80">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -181,8 +201,10 @@
                                         Name="DeleteButton"
                                         Margin="2"
                                         Content="{materialDesign:PackIcon Kind=Minus}"
-                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"/>
-
+                                        Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                        Command="{Binding Path=DataContext.RemoveStudent, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                        />
+                              
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
